@@ -26,7 +26,8 @@ class ShopController extends Controller
             "categories" => Category::with("products")->orderBy('id','DESC')->get(),
             "price" => [$request->query('price-from'),$request->query('price-to')],
             "category" => $request->query("category"),
-            "search" => $request->query("search")
+            "search" => $request->query("search"),
+            'count' => $products->count()
         ];
         return view('shop',$data);
     }

@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <h5 class="showing-pagination-results mt-5 mt-md-9 text-center text-md-end">Showing 09 Results</h5>
+                        <h5 class="showing-pagination-results mt-5 mt-md-9 text-center text-md-end">Showing {{$products->count()}} Results from {{ $products->total() }}</h5>
                     </div>
                 </div>
             </div>

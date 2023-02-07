@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/shop', [App\Http\Controllers\ShopController::class,'index']);
+Route::post('/newsletter', [App\Http\Controllers\NewsletterController::class,'create']);
 
 
-Route::get('/', function () {return view('home');});
+Route::get('/', [App\Http\Controllers\HomeController::class,'index']);
 Route::get('/product-details/{id}', function () {return view('product-details');});
 Route::get('/account-login', function () {return view('login');});
 Route::get('/my-account', function () {return view('my-account');});

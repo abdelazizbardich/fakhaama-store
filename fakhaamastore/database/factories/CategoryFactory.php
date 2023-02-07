@@ -18,7 +18,7 @@ class CategoryFactory extends Factory
     {
         return [
             "name" => fake()->word(),
-            "photo" => fake()->imageUrl($width = 370, $height = 450)
+            "photo" => fake()->imageUrl($width = 370, $height = 370)
         ];
     }
 }

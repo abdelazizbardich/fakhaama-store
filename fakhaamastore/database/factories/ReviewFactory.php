@@ -22,6 +22,7 @@ class ReviewFactory extends Factory
             "email" => fake()->email,
             "feedback" => fake()->realText($maxNbChars = 200, $indexSize = 2),
             "product_id" => Product::all()->random()->id,
+            "rating" => fake()->randomNumber(1),
         ];
     }
 }
