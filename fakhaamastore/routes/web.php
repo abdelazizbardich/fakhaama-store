@@ -19,7 +19,7 @@ Route::post('/newsletter', [App\Http\Controllers\NewsletterController::class,'cr
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class,'index']);
-Route::get('/product-details/{id}', function () {return view('product-details');});
+Route::get('/product-details/{product:id}', [App\Http\Controllers\ProductController::class,'index']);
 Route::get('/account-login', function () {return view('login');});
 Route::get('/my-account', function () {return view('my-account');});
 Route::get('/contact', function () {return view('contact');});

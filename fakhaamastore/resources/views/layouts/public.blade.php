@@ -13,7 +13,7 @@
     <meta name="author" content="codecarnival" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.webp')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.webp') }}">
 
     <!-- CSS (Font, Vendor, Icon, Plugins & Style CSS files) -->
 
@@ -23,17 +23,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS (Bootstrap & Icon Font) -->
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}">
 
     <!-- Plugins CSS (All Plugins Files) -->
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper-bundle.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/fancybox.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/nice-select.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/fancybox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/nice-select.css') }}">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.min.css') }}">
 
+    <style>
+        .product-item .product-action .action-btn-cart {
+            border-radius: 50px;
+            height: 50px;
+            letter-spacing: .2em;
+            font-size: 13px;
+            color: #231942;
+            font-weight: 500;
+            margin: 0 20px;
+            padding: 5px 28px 5px 32px;
+            text-align: center;
+            text-transform: uppercase;
+            transition-delay: .15s;
+            display: flex;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -47,9 +64,9 @@
                 <div class="row align-items-center">
                     <div class="col-5 col-sm-6 col-lg-3">
                         <div class="header-logo">
-                            <a href="index.html">
-                                <img class="logo-main" src="assets/images/logo.webp" width="95" height="68"
-                                    alt="Logo" />
+                            <a href="{{ url('') }}">
+                                <img class="logo-main" src="{{ asset('assets/images/logo.webp') }}" width="95"
+                                    height="68" alt="Logo" />
                             </a>
                         </div>
                     </div>
@@ -139,8 +156,7 @@
                             <div class="widget-item">
                                 <div class="widget-about">
                                     <a class="widget-logo" href="{{ url('') }}">
-                                        <img src="assets/images/logo.webp" width="95" height="68"
-                                            alt="Logo">
+                                        <img src="assets/images/logo.webp" width="95" height="68" alt="Logo">
                                     </a>
                                     <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting
                                         industry. Lorem Ipsum has been.</p>
@@ -210,8 +226,8 @@
                             </div>
                             <div class="modal-action-product">
                                 <div class="thumb">
-                                    <img src="assets/images/shop/modal1.webp" alt="Organic Food Juice" width="466"
-                                        height="320">
+                                    <img src="{{ asset('assets/images/shop/modal1.webp') }}" alt="Organic Food Juice"
+                                        width="466" height="320">
                                 </div>
                                 <h4 class="product-name"><a href="product-details.html">Readable content DX22</a></h4>
                             </div>
@@ -223,7 +239,7 @@
         <!--== End Product Quick Wishlist Modal ==-->
 
         <!--== Start Product Quick Add Cart Modal ==-->
-        <aside class="product-action-modal modal fade" id="action-CartAddModal" tabindex="-1" aria-hidden="true">
+        {{-- <aside class="product-action-modal modal fade" id="action-CartAddModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -236,7 +252,7 @@
                             </div>
                             <div class="modal-action-product">
                                 <div class="thumb">
-                                    <img src="assets/images/shop/modal1.webp" alt="Organic Food Juice" width="466"
+                                    <img src="{{asset('assets/images/shop/modal1.webp')}}" alt="Organic Food Juice" width="466"
                                         height="320">
                                 </div>
                                 <h4 class="product-name"><a href="product-details.html">Readable content DX22</a></h4>
@@ -245,7 +261,7 @@
                     </div>
                 </div>
             </div>
-        </aside>
+        </aside> --}}
         <!--== End Product Quick Add Cart Modal ==-->
 
         <!--== Start Aside Search Form ==-->
@@ -277,7 +293,7 @@
         <!--== End Aside Search Form ==-->
 
         <!--== Start Product Quick View Modal ==-->
-        <aside class="product-cart-view-modal modal fade" id="action-QuickViewModal" tabindex="-1"
+        {{-- <aside class="product-cart-view-modal modal fade" id="action-QuickViewModal" tabindex="-1"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -291,7 +307,7 @@
                                     <div class="col-lg-6">
                                         <!--== Start Product Thumbnail Area ==-->
                                         <div class="product-single-thumb">
-                                            <img src="assets/images/shop/quick-view1.webp" width="544"
+                                            <img src="{{asset('assets/images/shop/quick-view1.webp')}}" width="544"
                                                 height="560" alt="Image-HasTech">
                                         </div>
                                         <!--== End Product Thumbnail Area ==-->
@@ -337,7 +353,7 @@
                     </div>
                 </div>
             </div>
-        </aside>
+        </aside> --}}
         <!--== End Product Quick View Modal ==-->
 
         <!--== Start Aside Cart ==-->
@@ -353,7 +369,8 @@
                     <li class="aside-product-list-item">
                         <a href="#/" class="remove">×</a>
                         <a href="product-details.html">
-                            <img src="assets/images/shop/cart1.webp" width="68" height="84" alt="Image">
+                            <img src="{{ asset('assets/images/shop/cart1.webp') }}" width="68" height="84"
+                                alt="Image">
                             <span class="product-title">Leather Mens Slipper</span>
                         </a>
                         <span class="product-price">1 × £69.99</span>
@@ -361,7 +378,8 @@
                     <li class="aside-product-list-item">
                         <a href="#/" class="remove">×</a>
                         <a href="product-details.html">
-                            <img src="assets/images/shop/cart2.webp" width="68" height="84" alt="Image">
+                            <img src="{{ asset('assets/images/shop/cart2.webp') }}" width="68" height="84"
+                                alt="Image">
                             <span class="product-title">Quickiin Mens shoes</span>
                         </a>
                         <span class="product-price">1 × £20.00</span>
@@ -387,7 +405,7 @@
                     <ul>
                         <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="#">home</a>
                             <ul>
-                                <li><a href="index.html">Home One</a></li>
+                                <li><a href="{{ url('') }}">Home One</a></li>
                                 <li><a href="index-two.html">Home Two</a></li>
                             </ul>
                         </li>

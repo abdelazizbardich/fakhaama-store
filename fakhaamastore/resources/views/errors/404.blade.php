@@ -7,7 +7,7 @@
                 <div class="page-not-found">
                     <img src="assets/images/photos/page-not-found.webp" width="975" height="538" alt="Image">
                     <h3 class="title">Opps! You Lost</h3>
-                    <h5 class="back-btn">Go to <a href="index.html">Home</a> Page</h5>
+                    <h5 class="back-btn">Go to <a href="{{url('')}}">Home</a> Page</h5>
                 </div>
             </div>
         </section>

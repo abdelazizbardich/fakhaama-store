@@ -20,9 +20,9 @@ class ProductFactory extends Factory
     {
         return [
             "name" => fake()->company,
-            "short_description" => fake()->realText($maxNbChars = 300, $indexSize = 2),
+            "short_description" => fake()->realText($maxNbChars = 150, $indexSize = 2),
             "description" => fake()->realText($maxNbChars = 1000, $indexSize = 2),
-            "photo" => fake()->imageUrl($width = 370, $height = 450),
+            "photo" => /*"fake()->imageUrl($width = 370, $height = 450)"*/ "https://xtrfy.com/wp/wp-content/uploads/2022/10/Xtrfy-M8-Wireless-Black_Category.png",
             "gallery" => [fake()->imageUrl($width = 370, $height = 450),fake()->imageUrl($width = 370, $height = 450),fake()->imageUrl($width = 370, $height = 450)],
             "old_price" => fake()->randomNumber(2),
             "actual_price" => fake()->randomNumber(2),

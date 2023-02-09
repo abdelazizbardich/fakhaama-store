@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\OrderItem;
+
 class ShopController extends Controller
 {
     public function index(Request $request){
@@ -27,7 +29,8 @@ class ShopController extends Controller
             "price" => [$request->query('price-from'),$request->query('price-to')],
             "category" => $request->query("category"),
             "search" => $request->query("search"),
-            'count' => $products->count()
+            'count' => $products->count(),
+            'topSale' => OrderItem::select('product_id')->with('product')->groupBy("product_id")->orderBy('product_id','DESC')->limit(3)->get()
         ];
         return view('shop',$data);
     }

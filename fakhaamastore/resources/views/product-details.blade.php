@@ -29,25 +29,25 @@
                 <div class="row product-details">
                     <div class="col-lg-6">
                         <div class="product-details-thumb">
-                            <img src="assets/images/shop/product-details/1.webp" width="570" height="693" alt="Image">
-                            <span class="flag-new">new</span>
+                            <img src="{{ $product->photo }}" width="570" height="693" alt="Image">
+                            <span class="flag-new">{{ $product->category->name }}</span>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="product-details-content">
-                            <h5 class="product-details-collection">Premioum collection</h5>
-                            <h3 class="product-details-title">Offbline Instant Age Rewind Eraser.</h3>
+                            {{-- <h5 class="product-details-collection">Premioum collection</h5> --}}
+                            <h3 class="product-details-title">{{ $product->name }}</h3>
                             <div class="product-details-review">
                                 <div class="product-review-icon">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-half-o"></i>
+                                    <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 1)?'':'-o' }}"></i>
+                                    <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 2)?'':'-o' }}"></i>
+                                    <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 3)?'':'-o' }}"></i>
+                                    <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 4)?'':'-o' }}"></i>
+                                    <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 5)?'':'-o' }}"></i>
                                 </div>
-                                <button type="button" class="product-review-show">150 reviews</button>
+                                <button type="button" class="product-review-show">{{ $product->reviews->count() }} reviews</button>
                             </div>
-                            <div class="product-details-qty-list">
+                            {{-- <div class="product-details-qty-list">
                                 <div class="qty-list-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="qtyList1" checked>
                                     <label class="form-check-label" for="qtyList1">15 ml bottol <b>$250.00</b></label>
@@ -57,8 +57,8 @@
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="qtyList2">
                                     <label class="form-check-label" for="qtyList2">25 ml bottol <b>$350.00</b> <span class="extra-offer">extra 25%</span></label>
                                 </div>
-                            </div>
-                            <div class="product-details-pro-qty">
+                            </div> --}}
+                            <div class="product-details-pro-qty my-5">
                                 <div class="pro-qty">
                                     <input type="text" title="Quantity" value="01">
                                 </div>
@@ -67,14 +67,16 @@
                                 <input class="form-check-input" type="checkbox" value="" id="ShippingCost" checked>
                                 <label class="form-check-label" for="ShippingCost">Shipping from USA, Shipping Fees $4.22</label>
                             </div>
-                            <div class="product-details-action">
-                                <h4 class="price">$254.22</h4>
-                                <div class="product-details-cart-wishlist">
-                                    <button type="button" class="btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal"><i class="fa fa-heart-o"></i></button>
-                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Add to cart</button>
-                                </div>
+                            <div class="product-details-action mb-3">
+                                <span class="me-1 text-danger fw-bold display-4">{{ $product->actual_price}}{{config('app')['currency_symbol']}}</span>
+                                <span class="text-decoration-line-through small">{{ $product->old_price }}{{config('app')['currency_symbol']}}</span>
                             </div>
-                            <button type="button" class="btn shadow btn-lg bg-success mt-5 border-success d-flex align-items-center justify-content-between">Order by<i class="ms-3 fs-3 fa fa-whatsapp"></i> </button>
+                            <hr>
+                            <div class="d-flex mt-3">
+                                {{-- <button type="button" class="btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal"><i class="fa fa-heart-o"></i></button> --}}
+                                <button type="button" class="btn me-3" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Add to cart</button>
+                                <button type="button" class="btn shadow btn-lg bg-success border-success d-flex align-items-center justify-content-between">Order by<i class="ms-3 fs-3 fa fa-whatsapp"></i> </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -88,91 +90,52 @@
                             <div class="tab-pane" id="specification" role="tabpanel" aria-labelledby="specification-tab">
                                 <ul class="product-details-info-wrap">
                                     <li><span>Weight</span>
-                                        <p>250 g</p>
+                                        <p>{{ $product->weight }} g</p>
                                     </li>
                                     <li><span>Dimensions</span>
-                                        <p>10 x 10 x 15 cm</p>
+                                        <p>{{ $product->dimentions['width'] }} x {{ $product->dimentions['height'] }} x {{ $product->dimentions['depth'] }} cm</p>
                                     </li>
                                     <li><span>Materials</span>
-                                        <p>60% cotton, 40% polyester</p>
+                                        <p>{{implode(', ',$product->materials)}}
+                                        </p>
                                     </li>
                                     <li><span>Other Info</span>
-                                        <p>American heirloom jean shorts pug seitan letterpress</p>
+                                        <p>{{ $product->other_infos }}</p>
                                     </li>
                                 </ul>
 
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius velit corporis quo voluptate culpa soluta, esse accusamus, sunt quia omnis amet temporibus sapiente harum quam itaque libero tempore. Ipsum, ducimus. lorem</p>
+                                <p>
+                                    {{ $product->description }}
+                                </p>
                             </div>
 
                             <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
-                                <!--== Start Reviews Content Item ==-->
-                                <div class="product-review-item">
-                                    <div class="product-review-top">
-                                        <div class="product-review-thumb">
-                                            <img src="assets/images/shop/product-details/comment1.webp" alt="Images">
-                                        </div>
-                                        <div class="product-review-content">
-                                            <span class="product-review-name">Tomas Doe</span>
-                                            <span class="product-review-designation">Delveloper</span>
-                                            <div class="product-review-icon">
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-half-o"></i>
+                                @foreach ($product->reviews as $review)
+                                    <!--== Start Reviews Content Item ==-->
+                                    <div class="product-review-item">
+                                        <div class="product-review-top">
+                                            <div class="product-review-thumb">
+                                                <img src="{{asset('assets/images/shop/product-details/comment1.webp')}}" alt="Images">
+                                            </div>
+                                            <div class="product-review-content">
+                                                <span class="product-review-name">{{$review->name}}</span>
+                                                {{-- <span class="product-review-designation">Delveloper</span> --}}
+                                                <div class="product-review-icon">
+                                                    <i class="fa fa-star{{ ($review->rating >= 1)?'':'-o' }}"></i>
+                                                    <i class="fa fa-star{{ ($review->rating >= 2)?'':'-o' }}"></i>
+                                                    <i class="fa fa-star{{ ($review->rating >= 3)?'':'-o' }}"></i>
+                                                    <i class="fa fa-star{{ ($review->rating >= 4)?'':'-o' }}"></i>
+                                                    <i class="fa fa-star{{ ($review->rating >= 5)?'':'-o' }}"></i>
+                                                </div>
                                             </div>
                                         </div>
+                                        <p class="desc">
+                                            {{$review->feedback}}
+                                        </p>
+                                        {{-- <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button> --}}
                                     </div>
-                                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra amet, sodales faucibus nibh. Vivamus amet potenti ultricies nunc gravida duis. Nascetur scelerisque massa sodales.</p>
-                                    <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
-                                </div>
-                                <!--== End Reviews Content Item ==-->
-
-                                <!--== Start Reviews Content Item ==-->
-                                <div class="product-review-item product-review-reply">
-                                    <div class="product-review-top">
-                                        <div class="product-review-thumb">
-                                            <img src="assets/images/shop/product-details/comment2.webp" alt="Images">
-                                        </div>
-                                        <div class="product-review-content">
-                                            <span class="product-review-name">Tomas Doe</span>
-                                            <span class="product-review-designation">Delveloper</span>
-                                            <div class="product-review-icon">
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra amet, sodales faucibus nibh. Vivamus amet potenti ultricies nunc gravida duis. Nascetur scelerisque massa sodales.</p>
-                                    <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
-                                </div>
-                                <!--== End Reviews Content Item ==-->
-
-                                <!--== Start Reviews Content Item ==-->
-                                <div class="product-review-item mb-0">
-                                    <div class="product-review-top">
-                                        <div class="product-review-thumb">
-                                            <img src="assets/images/shop/product-details/comment3.webp" alt="Images">
-                                        </div>
-                                        <div class="product-review-content">
-                                            <span class="product-review-name">Tomas Doe</span>
-                                            <span class="product-review-designation">Delveloper</span>
-                                            <div class="product-review-icon">
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra amet, sodales faucibus nibh. Vivamus amet potenti ultricies nunc gravida duis. Nascetur scelerisque massa sodales.</p>
-                                    <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
-                                </div>
-                                <!--== End Reviews Content Item ==-->
+                                    <!--== End Reviews Content Item ==-->
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -217,10 +180,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="reviews-form-checkbox">
+                                        {{-- <div class="reviews-form-checkbox">
                                             <input class="form-check-input" type="checkbox" value="" id="ReviewsFormCheckbox" checked>
                                             <label class="form-check-label" for="ReviewsFormCheckbox">Provide ratings anonymously.</label>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <div class="form-input-item mb-0">
                                         <button type="submit" class="btn">SUBMIT</button>
@@ -238,7 +201,7 @@
         <div class="container">
             <!--== Start Product Category Item ==-->
             <a href="{{ url('product') }}" class="product-banner-item">
-                <img src="assets/images/shop/banner/7.webp" width="1170" height="240" alt="Image-HasTech">
+                <img src="{{asset('assets/images/shop/banner/7.webp')}}" width="1170" height="240" alt="Image-HasTech">
             </a>
             <!--== End Product Category Item ==-->
         </div>
@@ -251,7 +214,7 @@
                     <div class="col-12">
                         <div class="section-title">
                             <h2 class="title">Related Products</h2>
-                            <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</p>
+                            <p class="m-0">Explore Additional Related Products</p>
                         </div>
                     </div>
                 </div>
@@ -259,126 +222,48 @@
                     <div class="col-12">
                         <div class="swiper related-product-slide-container">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide mb-10">
-                                    <!--== Start Product Item ==-->
-                                    <div class="product-item product-st2-item">
-                                        <div class="product-thumb">
-                                            <a class="d-block" href="{{ url('product-details') }}">
-                                                <img src="assets/images/shop/8.webp" width="370" height="450" alt="Image-HasTech">
-                                            </a>
-                                            <span class="flag-new">new</span>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="product-rating">
-                                                <div class="rating">
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-half-o"></i>
+                                @foreach ($relatedProducts as $product)
+                                    <div class="swiper-slide mb-10">
+                                        <!--== Start Product Item ==-->
+                                        <div class="product-item product-st2-item">
+                                            <div class="product-thumb">
+                                                <a class="d-block" href="{{ url('product-details') }}">
+                                                    <img src="{{ $product->photo }}" width="370" height="450" alt="Image-HasTech">
+                                                </a>
+                                                <span class="flag-new">{{ $product->category->name }}</span>
+                                            </div>
+                                            <div class="product-info">
+                                                <div class="product-rating">
+                                                    <div class="rating">
+                                                        <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 1)?'':'-o' }}"></i>
+                                                        <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 2)?'':'-o' }}"></i>
+                                                        <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 3)?'':'-o' }}"></i>
+                                                        <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 4)?'':'-o' }}"></i>
+                                                        <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 5)?'':'-o' }}"></i>
+                                                    </div>
+                                                    <div class="reviews">{{$product->reviews->count()}} reviews</div>
                                                 </div>
-                                                <div class="reviews">150 reviews</div>
-                                            </div>
-                                            <h4 class="title"><a href="{{ url('product-details') }}">Readable content DX22</a></h4>
-                                            <div class="prices">
-                                                <span class="price">$210.00</span>
-                                                <span class="price-old">300.00</span>
-                                            </div>
-                                            <div class="product-action">
-                                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                                    <span>Add to cart</span>
-                                                </button>
-                                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                                    <i class="fa fa-expand"></i>
-                                                </button>
-                                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                                    <i class="fa fa-heart-o"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--== End prPduct Item ==-->
-                                </div>
-                                <div class="swiper-slide mb-10">
-                                    <!--== Start Product Item ==-->
-                                    <div class="product-item product-st2-item">
-                                        <div class="product-thumb">
-                                            <a class="d-block" href="{{ url('product-details') }}">
-                                                <img src="assets/images/shop/7.webp" width="370" height="450" alt="Image-HasTech">
-                                            </a>
-                                            <span class="flag-new">new</span>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="product-rating">
-                                                <div class="rating">
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-half-o"></i>
+                                                <h4 class="title"><a href="{{ url('product-details/'.$product->id) }}">{{ $product->name }}</a></h4>
+                                                <div class="prices">
+                                                    <span class="price">{{ $product->actual_price }}</span>
+                                                    <span class="price-old">{{ $product->old_price }}</span>
                                                 </div>
-                                                <div class="reviews">150 reviews</div>
-                                            </div>
-                                            <h4 class="title"><a href="{{ url('product-details') }}">Readable content DX22</a></h4>
-                                            <div class="prices">
-                                                <span class="price">$210.00</span>
-                                                <span class="price-old">300.00</span>
-                                            </div>
-                                            <div class="product-action">
-                                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                                    <span>Add to cart</span>
-                                                </button>
-                                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                                    <i class="fa fa-expand"></i>
-                                                </button>
-                                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                                    <i class="fa fa-heart-o"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--== End prPduct Item ==-->
-                                </div>
-                                <div class="swiper-slide mb-10">
-                                    <!--== Start Product Item ==-->
-                                    <div class="product-item product-st2-item">
-                                        <div class="product-thumb">
-                                            <a class="d-block" href="{{ url('product-details') }}">
-                                                <img src="assets/images/shop/5.webp" width="370" height="450" alt="Image-HasTech">
-                                            </a>
-                                            <span class="flag-new">new</span>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="product-rating">
-                                                <div class="rating">
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-half-o"></i>
+                                                <div class="product-action">
+                                                    <a href="{{ url('product-details/'.$product->id) }}" type="button" class="btn py-1 product-action-btn action-btn-cart">
+                                                        <span>Order now</span>
+                                                    </a>
+                                                    {{-- <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
+                                                        <i class="fa fa-expand"></i>
+                                                    </button> --}}
+                                                    {{-- <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
+                                                        <i class="fa fa-heart-o"></i>
+                                                    </button> --}}
                                                 </div>
-                                                <div class="reviews">150 reviews</div>
-                                            </div>
-                                            <h4 class="title"><a href="{{ url('product-details') }}">Readable content DX22</a></h4>
-                                            <div class="prices">
-                                                <span class="price">$210.00</span>
-                                                <span class="price-old">300.00</span>
-                                            </div>
-                                            <div class="product-action">
-                                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                                    <span>Add to cart</span>
-                                                </button>
-                                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                                    <i class="fa fa-expand"></i>
-                                                </button>
-                                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                                    <i class="fa fa-heart-o"></i>
-                                                </button>
                                             </div>
                                         </div>
+                                        <!--== End prPduct Item ==-->
                                     </div>
-                                    <!--== End prPduct Item ==-->
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

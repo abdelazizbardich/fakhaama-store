@@ -6,7 +6,7 @@
     <nav aria-label="breadcrumb" class="breadcrumb-style1">
         <div class="container">
             <ol class="breadcrumb justify-content-center">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{url('')}}">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Cart</li>
             </ol>
         </div>
