@@ -38,7 +38,7 @@
                                         <div style="background-color: rgb(255, 243, 218);" class="p-2 rounded-3 product-item product-st3-item">
                                             <div class="product-thumb">
                                                 <span class="position-absolute text-warning fw-bold">Top Sale</span>
-                                                <a class="d-block" href="{{ url("product-details/$product->product->id") }}">
+                                                <a class="d-block" href="{{ url("product-details/".$product->product->id) }}">
                                                     <img src="{{ $product->product->photo ? $product->product->photo : asset('assets/images/shop/1.webp') }}" width="370" height="450" alt="Image-HasTech">
                                                 </a>
                                                 <a href="{{ url('shop?category=' . $product->product->category->id .'&search=' . $search .'&price-from=' . ($price[0] ? $price[0] : 0) .'&price-to=' . ($price[0] ? $price[1] : 100000),) }}"
@@ -97,6 +97,9 @@
                                         <!--== End prPduct Item ==-->
                                     </div>
                                 @endforeach
+                                <div class="col-12 my-0">
+                                    <hr>
+                                </div>
                                 {{--  --}}
                                 @foreach ($products as $product)
                                     <div class="col-6 col-lg-4 col-xl-4 mb-4 mb-sm-8">
