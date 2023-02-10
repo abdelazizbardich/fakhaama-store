@@ -166,7 +166,7 @@
                                     {{-- <li><a href="{{ url('blog') }}">Blog</a></li> --}}
                                     <li><a href="{{ url('about-us') }}">About us</a></li>
                                     <li><a href="{{ url('contact') }}">Contact</a></li>
-                                    <li><a href="{{ url('privacy') }}">Privacy</a></li>
+                                    <li><a href="{{ url('privacy-policy') }}">Privacy policy</a></li>
                                     {{-- <li><a href="{{ url('account-login') }}">Login</a></li> --}}
                                     <li><a href="{{ url('shop') }}">Shop</a></li>
                                     {{-- <li><a href="{{ url('my-account') }}">My Account</a></li> --}}
