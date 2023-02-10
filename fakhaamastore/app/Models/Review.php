@@ -5,9 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Database\Eloquent\Builder;
+
 class Review extends Model
 {
     use HasFactory;
+
+
+    protected $fillable = [
+        "feedback",
+        "name",
+        "email",
+        "rating",
+        "product_id"
+    ];
 
 
 
@@ -19,5 +30,16 @@ class Review extends Model
     public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class, 'id', 'product_id');
+    }
+
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Order by name ASC
+        static::addGlobalScope('order', function (Builder $builder) {
+            $builder->orderBy('id', 'DESC');
+        });
     }
 }

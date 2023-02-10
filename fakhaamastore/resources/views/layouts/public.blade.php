@@ -65,7 +65,7 @@
                     <div class="col-5 col-sm-6 col-lg-3">
                         <div class="header-logo">
                             <a href="{{ url('') }}">
-                                <img class="logo-main" src="{{ asset('assets/images/logo.webp') }}" width="95"
+                                <img class="logo-main" src="{{ asset('assets/images/logo.png') }}" width="95"
                                     height="68" alt="Logo" />
                             </a>
                         </div>
@@ -156,10 +156,9 @@
                             <div class="widget-item">
                                 <div class="widget-about">
                                     <a class="widget-logo" href="{{ url('') }}">
-                                        <img src="assets/images/logo.webp" width="95" height="68" alt="Logo">
+                                        <img src="{{asset('assets/images/logo.png')}}" width="95" height="68" alt="Logo">
                                     </a>
-                                    <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been.</p>
+                                    <p class="desc">From the boldest to the softest and most subtle, we have something for every personality and every occasion.</p>
                                 </div>
                             </div>
                         </div>
@@ -167,14 +166,14 @@
                             <div class="widget-item">
                                 <h4 class="widget-title">Information</h4>
                                 <ul class="widget-nav">
-                                    <li><a href="{{ url('blog') }}">Blog</a></li>
+                                    {{-- <li><a href="{{ url('blog') }}">Blog</a></li> --}}
                                     <li><a href="{{ url('about-us') }}">About us</a></li>
                                     <li><a href="{{ url('contact') }}">Contact</a></li>
                                     <li><a href="{{ url('privacy') }}">Privacy</a></li>
-                                    <li><a href="{{ url('account-login') }}">Login</a></li>
+                                    {{-- <li><a href="{{ url('account-login') }}">Login</a></li> --}}
                                     <li><a href="{{ url('shop') }}">Shop</a></li>
-                                    <li><a href="{{ url('my-account') }}">My Account</a></li>
-                                    <li><a href="{{ url('faq') }}">FAQs</a></li>
+                                    {{-- <li><a href="{{ url('my-account') }}">My Account</a></li> --}}
+                                    {{-- <li><a href="{{ url('faq') }}">FAQs</a></li> --}}
                                 </ul>
                             </div>
                         </div>
@@ -182,12 +181,12 @@
                             <div class="widget-item">
                                 <h4 class="widget-title">Social Info</h4>
                                 <div class="widget-social">
-                                    <a href="https://twitter.com/" target="_blank" rel="noopener"><i
-                                            class="fa fa-twitter"></i></a>
-                                    <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i
+                                    {{-- <a href="https://twitter.com/" target="_blank" rel="noopener"><i
+                                            class="fa fa-twitter"></i></a> --}}
+                                    <a href="https://facebook.com/people/Fakhaama-store/100089897808895/" target="_blank" rel="noopener"><i
                                             class="fa fa-facebook"></i></a>
-                                    <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i
-                                            class="fa fa-pinterest-p"></i></a>
+                                    {{-- <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i
+                                            class="fa fa-pinterest-p"></i></a> --}}
                                 </div>
                             </div>
                         </div>
@@ -213,7 +212,7 @@
         <div id="scroll-to-top" class="scroll-to-top"><span class="fa fa-angle-up"></span></div>
 
         <!--== Start Product Quick Wishlist Modal ==-->
-        <aside class="product-action-modal modal fade" id="action-WishlistModal" tabindex="-1" aria-hidden="true">
+        {{-- <aside class="product-action-modal modal fade" id="action-WishlistModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -235,7 +234,7 @@
                     </div>
                 </div>
             </div>
-        </aside>
+        </aside> --}}
         <!--== End Product Quick Wishlist Modal ==-->
 
         <!--== Start Product Quick Add Cart Modal ==-->
@@ -265,7 +264,7 @@
         <!--== End Product Quick Add Cart Modal ==-->
 
         <!--== Start Aside Search Form ==-->
-        <aside class="aside-search-box-wrapper offcanvas offcanvas-top" tabindex="-1" id="AsideOffcanvasSearch"
+        {{-- <aside class="aside-search-box-wrapper offcanvas offcanvas-top" tabindex="-1" id="AsideOffcanvasSearch"
             aria-labelledby="offcanvasTopLabel">
             <div class="offcanvas-header">
                 <h5 class="d-none" id="offcanvasTopLabel">Aside Search</h5>
@@ -289,7 +288,7 @@
                     </div>
                 </div>
             </div>
-        </aside>
+        </aside> --}}
         <!--== End Aside Search Form ==-->
 
         <!--== Start Product Quick View Modal ==-->
@@ -357,7 +356,7 @@
         <!--== End Product Quick View Modal ==-->
 
         <!--== Start Aside Cart ==-->
-        <aside class="aside-cart-wrapper offcanvas offcanvas-end" tabindex="-1" id="AsideOffcanvasCart"
+        {{-- <aside class="aside-cart-wrapper offcanvas offcanvas-end" tabindex="-1" id="AsideOffcanvasCart"
             aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
                 <h1 class="d-none" id="offcanvasRightLabel">Shopping Cart</h1>
@@ -389,7 +388,7 @@
                 <a class="btn-total" href="product-cart.html">View cart</a>
                 <a class="btn-total" href="product-checkout.html">Checkout</a>
             </div>
-        </aside>
+        </aside> --}}
         <!--== End Aside Cart ==-->
 
         <!--== Start Aside Menu ==-->
@@ -403,63 +402,10 @@
             <div class="offcanvas-body">
                 <div id="offcanvasNav" class="offcanvas-menu-nav">
                     <ul>
-                        <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="#">home</a>
-                            <ul>
-                                <li><a href="{{ url('') }}">Home One</a></li>
-                                <li><a href="index-two.html">Home Two</a></li>
-                            </ul>
-                        </li>
-                        <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="about-us.html">about</a>
-                        </li>
-                        <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="#">shop</a>
-                            <ul>
-                                <li><a href="#" class="offcanvas-nav-item">Shop Layout</a>
-                                    <ul>
-                                        <li><a href="product.html">Shop 3 Column</a></li>
-                                        <li><a href="product-four-columns.html">Shop 4 Column</a></li>
-                                        <li><a href="product-left-sidebar.html">Shop Left Sidebar</a></li>
-                                        <li><a href="product-right-sidebar.html">Shop Right Sidebar</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" class="offcanvas-nav-item">Single Product</a>
-                                    <ul>
-                                        <li><a href="product-details-normal.html">Single Product Normal</a></li>
-                                        <li><a href="product-details.html">Single Product Variable</a></li>
-                                        <li><a href="product-details-group.html">Single Product Group</a></li>
-                                        <li><a href="product-details-affiliate.html">Single Product Affiliate</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" class="offcanvas-nav-item">Others Pages</a>
-                                    <ul>
-                                        <li><a href="product-cart.html">Shopping Cart</a></li>
-                                        <li><a href="product-checkout.html">Checkout</a></li>
-                                        <li><a href="product-wishlist.html">Wishlist</a></li>
-                                        <li><a href="product-compare.html">Compare</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="#">Blog</a>
-                            <ul>
-                                <li><a class="offcanvas-nav-item" href="#">Blog Layout</a>
-                                    <ul>
-                                        <li><a href="blog.html">Blog Grid</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="blog-details.html">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="#">Pages</a>
-                            <ul>
-                                <li><a href="account-login.html">My Account</a></li>
-                                <li><a href="faq.html">Frequently Questions</a></li>
-                                <li><a href="page-not-found.html">Page Not Found</a></li>
-                            </ul>
-                        </li>
-                        <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item"
-                                href="contact.html">Contact</a></li>
+                        <li><a href="{{ url('') }}">home</a></li>
+                        <li><a href="{{ url('about-us') }}">about</a></li>
+                        <li><a href="{{ url('shop') }}">shop</a></li>
+                        <li><a href="{{ url('contact') }}">Contact</a></li>
                     </ul>
                 </div>
             </div>

@@ -83,11 +83,11 @@
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="nav product-details-nav" id="product-details-nav-tab" role="tablist">
-                            <button class="nav-link" id="specification-tab" data-bs-toggle="tab" data-bs-target="#specification" type="button" role="tab" aria-controls="specification" aria-selected="false">Specification</button>
-                            <button class="nav-link active" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="true">Review</button>
+                            <button class="nav-link active" id="specification-tab" data-bs-toggle="tab" data-bs-target="#specification" type="button" role="tab" aria-controls="specification" aria-selected="true">Specification</button>
+                            <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">Review</button>
                         </div>
                         <div class="tab-content" id="product-details-nav-tabContent">
-                            <div class="tab-pane" id="specification" role="tabpanel" aria-labelledby="specification-tab">
+                            <div class="tab-pane fade show active" id="specification" role="tabpanel" aria-labelledby="specification-tab">
                                 <ul class="product-details-info-wrap">
                                     <li><span>Weight</span>
                                         <p>{{ $product->weight }} g</p>
@@ -109,7 +109,7 @@
                                 </p>
                             </div>
 
-                            <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+                            <div class="tab-pane" id="review" role="tabpanel" aria-labelledby="review-tab">
                                 @foreach ($product->reviews as $review)
                                     <!--== Start Reviews Content Item ==-->
                                     <div class="product-review-item">
@@ -143,19 +143,21 @@
                         <div class="product-reviews-form-wrap">
                             <h4 class="product-form-title">Leave a replay</h4>
                             <div class="product-reviews-form">
-                                <form action="#">
+                                <form action="{{ url('/reviews') }}" method="POST">
+                                    @csrf
+                                    <input type="number" name="product_id" hidden  value="{{$product->id}}"/>
                                     <div class="form-input-item">
-                                        <textarea class="form-control" placeholder="Enter you feedback"></textarea>
+                                        <textarea class="form-control" name="feedback" placeholder="Enter you feedback"></textarea>
                                     </div>
                                     <div class="form-input-item">
-                                        <input class="form-control" type="text" placeholder="Full Name">
+                                        <input class="form-control" type="text" name="name" placeholder="Full Name">
                                     </div>
                                     <div class="form-input-item">
-                                        <input class="form-control" type="email" placeholder="Email Address">
+                                        <input class="form-control" type="email" name="email" placeholder="Email Address">
                                     </div>
                                     <div class="form-input-item">
                                         <div class="form-ratings-item">
-                                            <select id="product-review-form-rating-select" class="select-ratings">
+                                            <select name="rating" id="product-review-form-rating-select" class="select-ratings">
                                                 <option value="1">01</option>
                                                 <option value="2">02</option>
                                                 <option value="3">03</option>

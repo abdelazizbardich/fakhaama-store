@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Database\Eloquent\Builder;
+
+
 class OrderItem extends Model
 {
     protected $table = "orders_itmes";
@@ -30,5 +33,16 @@ class OrderItem extends Model
     public function order()
     {
         return $this->hasOne(Order::class, 'id', 'order_id');
+    }
+
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Order by name ASC
+        static::addGlobalScope('order', function (Builder $builder) {
+            $builder->orderBy('id', 'DESC');
+        });
     }
 }

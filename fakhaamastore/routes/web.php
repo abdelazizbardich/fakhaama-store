@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/shop', [App\Http\Controllers\ShopController::class,'index']);
 Route::post('/newsletter', [App\Http\Controllers\NewsletterController::class,'create']);
+Route::post('/reviews', [App\Http\Controllers\ReviewController::class,'save']);
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class,'index']);

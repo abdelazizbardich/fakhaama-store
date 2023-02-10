@@ -1763,7 +1763,7 @@ hr {
 
 .hero-two-slide-item {
   align-items: center;
-  background-color: #FCEBED;
+  background-color: rgb(255, 243, 218);
   border-radius: 30px;
   height: 700px !important;
   display: flex;

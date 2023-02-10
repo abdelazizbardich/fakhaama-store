@@ -103,8 +103,7 @@
                                     <span class="price-old">{{ $product->old_price }}{{ config('app')['currency_symbol'] }}</span>
                                 </div>
                                 <div class="product-action">
-                                    <a href="{{ url('product-details/'.$product->id) }}" type="button" class="product-action-btn action-btn-cart"
-                                        data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
+                                    <a href="{{ url('product-details/'.$product->id) }}" type="button" class="product-action-btn action-btn-cart">
                                         <span>Order now</span>
                                     </a>
                                     {{-- <button type="button" class="product-action-btn action-btn-quick-view"
@@ -125,8 +124,7 @@
                                         data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
                                         <i class="fa fa-heart-o"></i>
                                     </button> --}}
-                                    <a href="{{ url('product-details/'.$product->id) }}" type="button" class="product-action-btn action-btn-cart"
-                                        data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
+                                    <a href="{{ url('product-details/'.$product->id) }}" type="button" class="product-action-btn action-btn-cart">
                                         <span>Order now</span>
                                 </a>
                                 </div>
