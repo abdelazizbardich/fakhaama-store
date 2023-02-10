@@ -52,6 +52,7 @@
                             <!--== Start Product Category Item ==-->
                             <a href="{{ url('shop?category='.$category->id) }}" class="product-banner-item">
                                 <img src="{{$category->photo}}" width="370" height="370" alt="Image-HasTech">
+                                <span class="h3 text-center w-100 d-block text-primary title">{{$category->name}}</span>
                             </a>
                             <!--== End Product Category Item ==-->
                         </div>
