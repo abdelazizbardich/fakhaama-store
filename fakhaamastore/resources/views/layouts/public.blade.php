@@ -4,16 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Brancy - Cosmetic & Beauty Salon Website Template</title>
+    <title>Fakhaama - Cosmetic & Beauty store Website</title>
     <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="Brancy - Cosmetic & Beauty Salon Website Template">
+    <meta name="description" content="From the boldest to the softest and most subtle, we have something for every personality and every occasion.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords"
-        content="bootstrap, ecommerce, ecommerce html, beauty, cosmetic shop, beauty products, cosmetic, beauty shop, cosmetic store, shop, beauty store, spa, cosmetic, cosmetics, beauty salon" />
-    <meta name="author" content="codecarnival" />
-
+    <meta name="author" content="abdelaziz bardich" />
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.webp') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.png') }}">
 
     <!-- CSS (Font, Vendor, Icon, Plugins & Style CSS files) -->
 
