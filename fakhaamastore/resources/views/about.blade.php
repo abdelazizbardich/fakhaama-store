@@ -9,7 +9,7 @@
                         <div class="page-header-content">
                             <div class="title-img"><img src="assets/images/photos/about-title.webp" alt="Image"></div>
                             <h2 class="page-header-title">{{ config('app.name')}}</h2>
-                            <h4 class="page-header-sub-title">Best parfum store</h4>
+                            <h4 class="page-header-sub-title">{{ config('app.subtitle') }}</h4>
                             <p class="page-header-desc">Our range of luxury parfum has been hand-selected to bring you the finest scents from around the world. Daring to soft and subtle, we have something for every personality and occasion.</p>
                         </div>
                     </div>

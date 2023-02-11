@@ -10,7 +10,7 @@
                         <div class="section-title position-relative">
                             <h2 class="title">Get in touch</h2>
                             <p class="m-0" style="max-width: unset;">
-                                Thank you for visiting our website. We would love to hear from you. Whether you have a question, suggestion, or just want to say hello, don't hesitate to reach out to us. Fill out the form below or send us an email at <a href="mailto:contact@fakhaama.store">contact@fakhaama.store</a>, and we will get back to you as soon as possible. We look forward to connecting with you!
+                                Thank you for visiting our website. We would love to hear from you. Whether you have a question, suggestion, or just want to say hello, don't hesitate to reach out to us. Fill out the form below or send us an email at <a href="mailto:{{ config('app.contact_email') }}">{{ config('app.contact_email') }}</a>, and we will get back to you as soon as possible. We look forward to connecting with you!
                             </p>
                             <div class="line-left-style mt-4 mb-1"></div>
                         </div>

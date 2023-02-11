@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h1>
-                            Privacy Policy for fakhaama.store
+                            Privacy Policy for {{ config('app.domain') }}
                         </h1>
                         <span class="d-block mb-5">
                             Last Updated: 10/02/2023
@@ -65,7 +65,7 @@
                         <p>
                             You may access and update your personal information by logging into your account on our website.
                             If you need assistance with accessing or updating your personal information, please contact us
-                            at <a href="mailto:contact@fakhaama.store" class="text-primary">contact@fakhaama.store</a>.
+                            at <a href="mailto:{{ config('app.contact_email') }}" class="text-primary">{{ config('app.contact_email') }}</a>.
                         </p>
                         <h5>
                             Changes to Privacy Policy
@@ -81,7 +81,7 @@
                         </h5>
                         <p>
                             If you have any questions or concerns about our Privacy Policy or our practices, please contact
-                            us at <a href="mailto:contact@fakhaama.store" class="text-primary">contact@fakhaama.store</a>
+                            us at <a href="mailto:{{ config('app.contact_email') }}" class="text-primary">{{ config('app.contact_email') }}</a>
                         </p>
                     </div>
                 </div>

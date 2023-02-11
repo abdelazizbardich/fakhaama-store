@@ -181,7 +181,7 @@
                             <div class="w-100 bg-light mt-5 py-3 p-2">
                                 <div class="row m-0">
                                     <div class="col-6">
-                                        <span class="small">Qestion? contact our <a href="mailto:suppoer@fakhaama.store">Customer Support</a></span>
+                                        <span class="small">Qestion? contact our <a href="mailto:{{ config('app.support_email') }}">Customer Support</a></span>
                                     </div>
                                     <div class="col-6 text-end">
                                         {{ date('Y') }} | {{ config('app.name')}} Sales team

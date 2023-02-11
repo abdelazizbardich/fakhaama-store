@@ -215,5 +215,17 @@ return [
     // Currency symbol
     'currency_symbol' => env('CURRENCY_SYMBOL'),
     // shipping cost
-    'shipping_cost' => env('SHIPPING_COST')
+    'shipping_cost' => env('SHIPPING_COST'),
+    // CONTACT_EMAIL
+    "contact_email" => env("CONTACT_EMAIL"),
+    // SUPPORT_EMAIL
+    "support_email" => env("SUPPORT_EMAIL"),
+    // SALES_EMAIL
+    "salses_email" => env("SALES_EMAIL"),
+    // APP_DOMAIN
+    "domain" => env("APP_DOMAIN"),
+    // APP_SUBTITLE
+    "subtitle" => env("APP_SUBTITLE"),
+    // WHATSAPP_NUMBER
+    "whatsupp_number" => env("WHATSAPP_NUMBER")
 ];

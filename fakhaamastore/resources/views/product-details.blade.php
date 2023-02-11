@@ -76,7 +76,7 @@
                                 <div class="d-flex mt-3">
                                     {{-- <button type="button" class="btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal"><i class="fa fa-heart-o"></i></button> --}}
                                     <button type="submit" class="btn me-3" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Order Now</button>
-                                    <button type="button" class="btn shadow btn-lg bg-success border-success d-flex align-items-center justify-content-between">Order by<i class="ms-3 fs-3 fa fa-whatsapp"></i> </button>
+                                    <a href="{{"https://api.whatsapp.com/send?phone=".config('app.whatsupp_number')."&text=".urlencode('Hi, I would like to order this product:'.$product->name.', is it still available? '.url('/product-details/'.$product->id))}}" target="_blank" class="btn shadow btn-lg bg-success border-success d-flex align-items-center justify-content-between">Order by<i class="ms-3 fs-3 fa fa-whatsapp"></i> </a>
                                 </div>
                             </div>
                         </form>
