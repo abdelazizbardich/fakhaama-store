@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Fakhaama - Cosmetic & Beauty store Website</title>
+    <title>{{ config('app.name')}} - Cosmetic & Beauty store Website</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="From the boldest to the softest and most subtle, we have something for every personality and every occasion.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -200,7 +200,7 @@
             <div class="footer-bottom">
                 <div class="container pt-0 pb-0">
                     <div class="footer-bottom-content">
-                        <p class="copyright">© 2023 FakhaamaStore. Made with <i class="fa fa-heart"></i> by <a
+                        <p class="copyright">© 2023 {{ config('app.name')}}. Made with <i class="fa fa-heart"></i> by <a
                                 target="_blank" href="https://abdelazizbardich.com">Abdelaziz Bardich.</a></p>
                     </div>
                 </div>

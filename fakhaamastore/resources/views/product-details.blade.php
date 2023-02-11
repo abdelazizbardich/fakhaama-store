@@ -231,7 +231,7 @@
                                         <!--== Start Product Item ==-->
                                         <div class="product-item product-st2-item">
                                             <div class="product-thumb">
-                                                <a class="d-block" href="{{ url('product-details') }}">
+                                                <a class="d-block" href="{{ url('product-details/'.$product->id) }}">
                                                     <img src="{{ $product->photo }}" width="370" height="450" alt="Image-HasTech">
                                                 </a>
                                                 <span class="flag-new">{{ $product->category->name }}</span>

@@ -14,9 +14,9 @@
                             Last Updated: 10/02/2023
                         </span>
                         <p>
-                            At fakhaama store, we are committed to protecting the privacy of our customers. This Privacy
+                            At {{ config('app.name')}}, we are committed to protecting the privacy of our customers. This Privacy
                             Policy sets out our practices for collecting, using, and disclosing personal information through
-                            our website, fakhaama store. By using our website, you agree to the terms of this Privacy
+                            our website, {{ config('app.name')}}. By using our website, you agree to the terms of this Privacy
                             Policy.
                         </p>
                         <h5>

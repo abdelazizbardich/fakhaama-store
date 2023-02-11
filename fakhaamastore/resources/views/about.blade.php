@@ -8,7 +8,7 @@
                     <div class="col-md-7 col-lg-7 col-xl-7">
                         <div class="page-header-content">
                             <div class="title-img"><img src="assets/images/photos/about-title.webp" alt="Image"></div>
-                            <h2 class="page-header-title">Fakhaama store</h2>
+                            <h2 class="page-header-title">{{ config('app.name')}}</h2>
                             <h4 class="page-header-sub-title">Best parfum store</h4>
                             <p class="page-header-desc">Our range of luxury parfum has been hand-selected to bring you the finest scents from around the world. Daring to soft and subtle, we have something for every personality and occasion.</p>
                         </div>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="about-content">
                     <h2 class="title">Best parfum Provider</h2>
-                    <p class="desc">Welcome to the official Fakhama store page We are so excited to share our passion for fragrances with all of you. Our collection of luxury fragrances has been hand-selected to bring you the finest scents from around the world. Daring to soft and subtle, we have something for every personality and occasion. Follow our page to stay updated With our latest products, special offers and exciting events, we can't wait to take this aromatic journey with you. Let the scent of luxury fill your life.</p>
+                    <p class="desc">Welcome to the official {{ config('app.name')}} page We are so excited to share our passion for fragrances with all of you. Our collection of luxury fragrances has been hand-selected to bring you the finest scents from around the world. Daring to soft and subtle, we have something for every personality and occasion. Follow our page to stay updated With our latest products, special offers and exciting events, we can't wait to take this aromatic journey with you. Let the scent of luxury fill your life.</p>
                 </div>
             </div>
         </section>

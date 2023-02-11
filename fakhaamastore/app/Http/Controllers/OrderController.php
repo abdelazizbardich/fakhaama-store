@@ -90,6 +90,6 @@ class OrderController extends Controller
             "address" => $address,
             "user" => $user
         ];
-        return view('order-confirmed',$data);
+        return view('order-submited',$data);
     }
 }

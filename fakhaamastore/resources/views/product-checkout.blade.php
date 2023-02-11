@@ -64,8 +64,8 @@
                             @endif
                             <div class="col-lg-6">
                                 @csrf
-                                <input  value="{{$order->product->id}}" name="product_id"/>
-                                <input  value="{{$order->quantity}}" name="quantity"/>
+                                <input type="hidden" hidden value="{{$order->product->id}}" name="product_id"/>
+                                <input type="hidden" hidden value="{{$order->quantity}}" name="quantity"/>
                                 <!--== Start Billing Accordion ==-->
                                 <div class="checkout-billing-details-wrap">
                                     <h2 class="title">Billing details</h2>
@@ -74,13 +74,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="f_name">First name <abbr class="required" title="required">*</abbr></label>
-                                                        <input id="f_name" placeholder="first name..." name="first_name" type="text" class="form-control">
+                                                        <input id="f_name" value="{{ old('first_name') }}" placeholder="first name..." name="first_name" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="l_name">Last name <abbr class="required" title="required">*</abbr></label>
-                                                        <input id="l_name" placeholder="last name..." name="last_name" type="text" class="form-control">
+                                                        <input id="l_name" value="{{ old('last_name') }}" placeholder="last name..." name="last_name" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 {{-- <div class="col-md-12">
@@ -92,13 +92,13 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="phone">Phone  <abbr class="required" title="required">*</abbr></label>
-                                                        <input id="phone" placeholder="Phone number..." name="phone" type="text" class="form-control">
+                                                        <input id="phone" value="{{ old('phone') }}" placeholder="Phone number..." name="phone" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12 mb-4">
                                                     <div class="form-group">
                                                         <label for="country">Country <abbr class="required" title="required">*</abbr></label>
-                                                        <select id="country" name="country" class="form-control wide">
+                                                        <select id="country" value="{{ old('country') }}" name="country" class="form-control wide">
                                                             <option value="Morocco">Morocco</option>
                                                         </select>
                                                     </div>
@@ -106,17 +106,17 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="street-address">Street address <abbr class="required" title="required">*</abbr></label>
-                                                        <input id="street-address" name="address" type="text" class="form-control" placeholder="House number and street name">
+                                                        <input id="street-address" value="{{ old('address') }}" name="address" type="text" class="form-control" placeholder="House number and street name">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="street-address2" class="visually-hidden">Street address 2</label>
-                                                        <input id="street-address2" name="address_2" type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
+                                                        <input id="street-address2" value="{{ old('address_2') }}" name="address_2" type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="town">Town / City <abbr class="required" title="required">*</abbr></label>
-                                                        <select id="town" name="city" class="form-control wide">
+                                                        <select id="town" name="city" value="{{ old('city') }}" class="form-control wide">
                                                             <option disabled selected>City...</option>
                                                             <option>Casablanca</option>
                                                             <option>Fez</option>
@@ -191,7 +191,7 @@
                                                 <div class="col-md-12 mb-4">
                                                     <div class="form-group">
                                                         <label for="region">Region <abbr class="required" title="required">*</abbr></label>
-                                                        <select id="region" name="region" class="form-control wide">
+                                                        <select id="region" value="{{ old('region') }}" name="region" class="form-control wide">
                                                             <option value="" disabled selected>Region...</option>
                                                             <option value="Tanger-Tétouan-Al Hoceïma">Tanger-Tétouan-Al Hoceïma</option>
                                                             <option value="L'Oriental">L'Oriental</option>
@@ -211,13 +211,13 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="pz-code">Postcode / ZIP (optional)</label>
-                                                        <input id="pz-code" name="postal_code" type="text" class="form-control">
+                                                        <input id="pz-code" value="{{ old('postal_code') }}" name="postal_code" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="email">Email address <abbr class="required" title="required">*</abbr></label>
-                                                        <input id="email" name="email" type="text" class="form-control">
+                                                        <input id="email" value="{{ old('email') }}" name="email" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 {{-- <div id="CheckoutBillingAccordion2" class="col-md-12">
@@ -310,7 +310,7 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group mb-0">
                                                         <label for="order-notes">Order notes (optional)</label>
-                                                        <textarea id="order-notes" name="order_note" class="form-control" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                                        <textarea value="{{ old('order_note') }}" id="order-notes" name="order_note" class="form-control" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
                                                     </div>
                                                 </div>
                                             </div>
