@@ -13,6 +13,12 @@ class Order extends Model
     use HasFactory;
 
 
+    protected $fillable = [
+        "code",
+        "address_id",
+        "user_id"
+    ];
+
     /**
      * Get all of the orderItems for the Order
      *

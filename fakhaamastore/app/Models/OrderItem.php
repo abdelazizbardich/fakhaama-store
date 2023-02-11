@@ -10,8 +10,14 @@ use Illuminate\Database\Eloquent\Builder;
 
 class OrderItem extends Model
 {
-    protected $table = "orders_itmes";
     use HasFactory;
+
+    protected $table = "orders_itmes";
+    protected $fillable = [
+        "quantity",
+        "order_id",
+        "product_id"
+    ];
 
 
 
