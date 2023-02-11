@@ -34,50 +34,52 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="product-details-content">
-                            {{-- <h5 class="product-details-collection">Premioum collection</h5> --}}
-                            <h3 class="product-details-title">{{ $product->name }}</h3>
-                            <div class="product-details-review">
-                                <div class="product-review-icon">
-                                    <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 1)?'':'-o' }}"></i>
-                                    <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 2)?'':'-o' }}"></i>
-                                    <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 3)?'':'-o' }}"></i>
-                                    <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 4)?'':'-o' }}"></i>
-                                    <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 5)?'':'-o' }}"></i>
+                        <form action="{{ url('product-checkout/'.$product->id) }}" method="get">
+                            <div class="product-details-content">
+                                {{-- <h5 class="product-details-collection">Premioum collection</h5> --}}
+                                <h3 class="product-details-title">{{ $product->name }}</h3>
+                                <div class="product-details-review">
+                                    <div class="product-review-icon">
+                                        <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 1)?'':'-o' }}"></i>
+                                        <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 2)?'':'-o' }}"></i>
+                                        <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 3)?'':'-o' }}"></i>
+                                        <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 4)?'':'-o' }}"></i>
+                                        <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 5)?'':'-o' }}"></i>
+                                    </div>
+                                    <button type="button" class="product-review-show">{{ $product->reviews->count() }} reviews</button>
                                 </div>
-                                <button type="button" class="product-review-show">{{ $product->reviews->count() }} reviews</button>
-                            </div>
-                            {{-- <div class="product-details-qty-list">
-                                <div class="qty-list-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="qtyList1" checked>
-                                    <label class="form-check-label" for="qtyList1">15 ml bottol <b>$250.00</b></label>
-                                </div>
+                                {{-- <div class="product-details-qty-list">
+                                    <div class="qty-list-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="qtyList1" checked>
+                                        <label class="form-check-label" for="qtyList1">15 ml bottol <b>$250.00</b></label>
+                                    </div>
 
-                                <div class="qty-list-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="qtyList2">
-                                    <label class="form-check-label" for="qtyList2">25 ml bottol <b>$350.00</b> <span class="extra-offer">extra 25%</span></label>
+                                    <div class="qty-list-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="qtyList2">
+                                        <label class="form-check-label" for="qtyList2">25 ml bottol <b>$350.00</b> <span class="extra-offer">extra 25%</span></label>
+                                    </div>
+                                </div> --}}
+                                <div class="product-details-pro-qty my-5">
+                                    <div class="pro-qty">
+                                        <input type="text" name="quantity" title="Quantity" value="01">
+                                    </div>
                                 </div>
-                            </div> --}}
-                            <div class="product-details-pro-qty my-5">
-                                <div class="pro-qty">
-                                    <input type="text" title="Quantity" value="01">
+                                {{-- <div class="product-details-shipping-cost">
+                                    <input class="form-check-input" type="checkbox" value="" id="ShippingCost" checked>
+                                    <label class="form-check-label" for="ShippingCost">Shipping from USA, Shipping Fees $4.22</label>
+                                </div> --}}
+                                <div class="product-details-action mb-3">
+                                    <span class="me-1 text-danger fw-bold display-4">{{ $product->actual_price}}{{config('app')['currency_symbol']}}</span>
+                                    <span class="text-decoration-line-through small">{{ $product->old_price }}{{config('app')['currency_symbol']}}</span>
+                                </div>
+                                <hr>
+                                <div class="d-flex mt-3">
+                                    {{-- <button type="button" class="btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal"><i class="fa fa-heart-o"></i></button> --}}
+                                    <button type="submit" class="btn me-3" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Order Now</button>
+                                    <button type="button" class="btn shadow btn-lg bg-success border-success d-flex align-items-center justify-content-between">Order by<i class="ms-3 fs-3 fa fa-whatsapp"></i> </button>
                                 </div>
                             </div>
-                            <div class="product-details-shipping-cost">
-                                <input class="form-check-input" type="checkbox" value="" id="ShippingCost" checked>
-                                <label class="form-check-label" for="ShippingCost">Shipping from USA, Shipping Fees $4.22</label>
-                            </div>
-                            <div class="product-details-action mb-3">
-                                <span class="me-1 text-danger fw-bold display-4">{{ $product->actual_price}}{{config('app')['currency_symbol']}}</span>
-                                <span class="text-decoration-line-through small">{{ $product->old_price }}{{config('app')['currency_symbol']}}</span>
-                            </div>
-                            <hr>
-                            <div class="d-flex mt-3">
-                                {{-- <button type="button" class="btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal"><i class="fa fa-heart-o"></i></button> --}}
-                                <button type="button" class="btn me-3" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Add to cart</button>
-                                <button type="button" class="btn shadow btn-lg bg-success border-success d-flex align-items-center justify-content-between">Order by<i class="ms-3 fs-3 fa fa-whatsapp"></i> </button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <div class="row">

@@ -9,14 +9,15 @@
                     <div class="offset-lg-6 col-lg-6">
                         <div class="section-title position-relative">
                             <h2 class="title">Get in touch</h2>
-                            <p class="m-0">
+                            <p class="m-0" style="max-width: unset;">
                                 Thank you for visiting our website. We would love to hear from you. Whether you have a question, suggestion, or just want to say hello, don't hesitate to reach out to us. Fill out the form below or send us an email at <a href="mailto:contact@fakhaama.store">contact@fakhaama.store</a>, and we will get back to you as soon as possible. We look forward to connecting with you!
                             </p>
                             <div class="line-left-style mt-4 mb-1"></div>
                         </div>
                         <!--== Start Contact Form ==-->
                         <div class="contact-form">
-                            <form id="contact-form" action="{{url('contact')}}" method="POST">
+                            <form action="{{url('contact')}}" method="POST">
+                                @csrf
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">

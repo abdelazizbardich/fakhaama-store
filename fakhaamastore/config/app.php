@@ -214,4 +214,6 @@ return [
 
     // Currency symbol
     'currency_symbol' => env('CURRENCY_SYMBOL'),
+    // shipping cost
+    'shipping_cost' => env('SHIPPING_COST')
 ];

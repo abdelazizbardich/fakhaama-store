@@ -47,6 +47,10 @@
             display: flex;
             align-items: center;
         }
+        .nice-select.wide .list{
+            max-height: 300px;
+            overflow-y: auto;
+        }
     </style>
 </head>
 
