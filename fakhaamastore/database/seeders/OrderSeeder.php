@@ -15,6 +15,6 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Order::factory(500)->create();
+        \App\Models\Order::factory(50)->create();
     }
 }

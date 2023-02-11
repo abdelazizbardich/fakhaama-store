@@ -16,11 +16,12 @@
             <div class="row vh-100">
                 <div class="col-md-6 m-auto border p-3 px-5 bg-white rounded shadow">
                     <h1 class="display-3 fw-bold text-center mb-5">Login</h1>
-                    <form>
+                    <form action="{{url('login')}}" method="POST">
+                        @csrf
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form2Example1">Email address:</label>
-                            <input type="email" name="email" placeholder="Email address..." id="form2Example1" class="form-control form-control-lg" />
+                            <input type="email" name="email" placeholder="Email address..." value="{{old('email')}}" id="form2Example1" class="form-control form-control-lg" />
                         </div>
 
                         <!-- Password input -->
@@ -34,7 +35,7 @@
                             <div class="col d-flex justify-content-start">
                                 <!-- Checkbox -->
                                 <div class="form-check">
-                                    <input class="form-check-input" name="remember_me" type="checkbox" value="" id="form2Example31" checked />
+                                    <input class="form-check-input" name="remember_me" type="checkbox" id="form2Example31" @if(old('remember_me') == "on") checked @endif />
                                     <label class="form-check-label" for="form2Example31"> Remember me </label>
                                 </div>
                             </div>
