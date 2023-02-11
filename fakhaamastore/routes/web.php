@@ -32,3 +32,8 @@ Route::get('/privacy-policy', function () {return view('privacy-policy');});
 Route::get('/about-us', function () {return view('about');});
 Route::get('/product-cart', function () {return view('product-cart');});
 Route::get('/my-order-details', function () {return view('my-order-details');});
+
+// Admin
+Route::get("/login",[App\Http\Controllers\AuthController::class,'getLogin']);
+Route::get("/forgot-password",[App\Http\Controllers\AuthController::class,'getForgotPassword']);
+Route::get("/reset-password",[App\Http\Controllers\AuthController::class,'getResetPassword']);
