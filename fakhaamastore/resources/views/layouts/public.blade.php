@@ -199,11 +199,11 @@
             <!--== End Footer Main ==-->
 
             <!--== Start Footer Bottom ==-->
-            <div class="footer-bottom">
+            <div class="footer-bottom" dir="ltr">
                 <div class="container pt-0 pb-0">
                     <div class="footer-bottom-content">
-                        <p class="copyright">© 2023 {{ config('app.name')}}. Made with <i class="fa fa-heart"></i> by <a
-                                target="_blank" href="https://abdelazizbardich.com">Abdelaziz Bardich.</a></p>
+                        <p class="copyright">{{date('Y')}} © {{ config('app.name')}}. Made with <i class="fa fa-heart"></i> by <a
+                                target="_blank" href="https://abdelazizbardich.com">Abdelaziz Bardich</a></p>
                     </div>
                 </div>
             </div>

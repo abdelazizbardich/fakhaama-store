@@ -133,11 +133,11 @@
                                                 <tbody>
                                                     <tr>
                                                         <th>المجموع الفرعي</th>
-                                                        <td class="text-end fw-bold">{{ $product->actual_price * $quantity }} {{ config('app')['currency_symbol'] }}</td>
+                                                        <td class="text-start fw-bold">{{ $product->actual_price * $quantity }} {{ config('app')['currency_symbol'] }}</td>
                                                     </tr>
                                                     <tr>
                                                         <th>تكلفة التوصيل</th>
-                                                        <td class="text-end fw-bold">{{ config('app')['shipping_cost'] }} {{ config('app')['currency_symbol'] }}</td>
+                                                        <td class="text-start fw-bold">{{ config('app')['shipping_cost'] }} {{ config('app')['currency_symbol'] }}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -151,7 +151,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <th>المجموع</th>
-                                                        <td class="text-end fw-bold text-primary">
+                                                        <td class="text-start fw-bold text-primary">
                                                             {{ $product->actual_price * $quantity + config('app')['shipping_cost'] }} {{ config('app')['currency_symbol'] }}</td>
                                                     </tr>
                                                 </tbody>
