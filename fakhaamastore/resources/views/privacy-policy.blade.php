@@ -8,80 +8,83 @@
                 <div class="row">
                     <div class="col-12">
                         <h1>
-                            Privacy Policy for {{ config('app.domain') }}
+                            سياسة الخصوصية لـ {{ config('app.domain') }}
                         </h1>
                         <span class="d-block mb-5">
-                            Last Updated: 10/02/2023
+                            آخر تحديث: 10/02/2023
                         </span>
                         <p>
-                            At {{ config('app.name')}}, we are committed to protecting the privacy of our customers. This Privacy
-                            Policy sets out our practices for collecting, using, and disclosing personal information through
-                            our website, {{ config('app.name')}}. By using our website, you agree to the terms of this Privacy
-                            Policy.
+                            في {{ config('app.name') }} ، نحن ملتزمون بحماية خصوصية عملائنا. هذه الخصوصية
+                            تحدد السياسة ممارساتنا لجمع المعلومات الشخصية واستخدامها والكشف عنها من خلال
+                            موقعنا الإلكتروني {{ config('app.name') }}. باستخدام موقعنا ، فإنك توافق على شروط هذه الخصوصية
+                            سياسة.
                         </p>
                         <h5>
-                            Collection of Personal Information
+                            جمع المعلومات الشخصية
                         </h5>
                         <p>
-                            We may collect personal information when you visit our website, place an order, subscribe to our
-                            newsletter, or participate in promotions or surveys. Personal information may include your name,
-                            email address, postal address, phone number, payment information, and other information that can
-                            be used to identify you.
+                            قد نقوم بجمع معلومات شخصية عند زيارة موقعنا على الإنترنت ، أو تقديم طلب ، أو الاشتراك في موقعنا
+                            النشرة الإخبارية ، أو المشاركة في العروض الترويجية أو الاستطلاعات. قد تتضمن المعلومات الشخصية
+                            اسمك ،
+                            عنوان البريد الإلكتروني والعنوان البريدي ورقم الهاتف ومعلومات الدفع وغيرها من المعلومات التي
+                            يمكن
+                            تستخدم للتعرف عليك.
                         </p>
                         <h5>
-                            Use of Personal Information
+                            استخدام المعلومات الشخصية
                         </h5>
                         <p>
-                            We use personal information to provide you with the services you request, to process
-                            transactions, to communicate with you, to improve our website and products, and to offer you
-                            promotions and surveys. We may also use personal information for internal purposes, such as
-                            auditing and data analysis.
+                            نستخدم المعلومات الشخصية لتزويدك بالخدمات التي تطلبها ومعالجتها
+                            المعاملات ، للتواصل معك ، لتحسين موقعنا ومنتجاتنا ، ولتقديم لك
+                            الترقيات والاستطلاعات. يجوز لنا أيضًا استخدام المعلومات الشخصية لأغراض داخلية ، مثل
+                            المراجعة وتحليل البيانات.
                         </p>
                         <h5>
-                            Disclosure of Personal Information
+                            إفشاء المعلومات الشخصية
                         </h5>
                         <p>
-                            We do not sell, rent, or trade your personal information to third parties for their marketing
-                            purposes. We may share your personal information with third-party service providers who assist
-                            us with our website, payment processing, and other services. These service providers are subject
-                            to confidentiality agreements and are only permitted to use your personal information for the
-                            purpose of providing services to us.
+                            نحن لا نبيع أو نؤجر أو نتاجر بمعلوماتك الشخصية لأطراف ثالثة لتسويقها
+                            المقاصد. قد نشارك معلوماتك الشخصية مع مزودي الخدمة الخارجيين الذين يساعدون
+                            لنا من خلال موقعنا على الويب ومعالجة الدفع والخدمات الأخرى. يخضع مقدمو الخدمة هؤلاء
+                            لاتفاقيات السرية ويسمح فقط باستخدام معلوماتك الشخصية لـ
+                            الغرض من تقديم الخدمات لنا.
                         </p>
                         <p>
-                            We may also disclose your personal information in response to legal process, such as a court
-                            order or subpoena, or to comply with applicable laws.
-                        </p>
-                        <h5>
-                            Security of Personal Information
-                        </h5>
-                        <p>
-                            We use reasonable measures to protect personal information from unauthorized access, use, or
-                            disclosure. However, no security measures can guarantee the complete security of personal
-                            information, and we cannot be responsible for unauthorized access to your personal information.
+                            قد نكشف أيضًا عن معلوماتك الشخصية استجابةً لإجراءات قانونية ، مثل المحكمة
+                            أمر أو أمر استدعاء ، أو الامتثال للقوانين المعمول بها.
                         </p>
                         <h5>
-                            Accessing and Updating Personal Information
+                            أمن المعلومات الشخصية
                         </h5>
                         <p>
-                            You may access and update your personal information by logging into your account on our website.
-                            If you need assistance with accessing or updating your personal information, please contact us
-                            at <a href="mailto:{{ config('app.contact_email') }}" class="text-primary">{{ config('app.contact_email') }}</a>.
+                            نحن نستخدم تدابير معقولة لحماية المعلومات الشخصية من الوصول غير المصرح به أو الاستخدام أو
+                            إفشاء. ومع ذلك ، لا توجد إجراءات أمنية يمكن أن تضمن الأمن الكامل للشخصية
+                            المعلومات ، ولا يمكننا أن نكون مسؤولين عن الوصول غير المصرح به إلى معلوماتك الشخصية.
                         </p>
                         <h5>
-                            Changes to Privacy Policy
+                            الوصول إلى المعلومات الشخصية وتحديثها
                         </h5>
-                        <p>
-                            We may update this Privacy Policy from time to time to reflect changes in our practices or
-                            applicable laws. The latest version of the Privacy Policy will be posted on our website, and you
-                            should review the Privacy Policy regularly to ensure that you are aware of our current
-                            practices.
+                        <p>يمكنك الوصول إلى معلوماتك الشخصية وتحديثها عن طريق تسجيل الدخول إلى حسابك على موقعنا.
+                            إذا كنت بحاجة إلى مساعدة في الوصول إلى معلوماتك الشخصية أو تحديثها ، فيرجى الاتصال بنا
+                            في <a href="mailto:{{ config('app.contact_email') }}"
+                                class="text-primary">{{ config('app.contact_email') }}</a>.
                         </p>
                         <h5>
-                            Contact Us
+                            التغييرات في سياسة الخصوصية
                         </h5>
                         <p>
-                            If you have any questions or concerns about our Privacy Policy or our practices, please contact
-                            us at <a href="mailto:{{ config('app.contact_email') }}" class="text-primary">{{ config('app.contact_email') }}</a>
+                            قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر لتعكس التغييرات في ممارساتنا أو
+                            القوانين المعمول بها. سيتم نشر أحدث إصدار من سياسة الخصوصية على موقعنا الإلكتروني وأنت
+                            يجب مراجعة سياسة الخصوصية بانتظام للتأكد من أنك على علم بما لدينا
+                            الممارسات.
+                        </p>
+                        <h5>
+                            اتصل بنا
+                        </h5>
+                        <p>
+                            إذا كانت لديك أي أسئلة أو مخاوف بشأن سياسة الخصوصية أو ممارساتنا ، فيرجى الاتصال
+                            لنا في <a href="mailto:{{ config('app.contact_email') }}"
+                                class="text-primary">{{ config('app.contact_email') }}</a>
                         </p>
                     </div>
                 </div>

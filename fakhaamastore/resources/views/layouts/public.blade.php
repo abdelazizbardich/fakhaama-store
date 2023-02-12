@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/nice-select.css') }}">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <style>
         .product-item .product-action .action-btn-cart {
@@ -54,7 +54,7 @@
     </style>
 </head>
 
-<body>
+<body dir="rtl">
 
     <!--== Wrapper Start ==-->
     <div class="wrapper">
@@ -63,7 +63,7 @@
         <header class="header-area sticky-header">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-5 col-sm-6 col-lg-3">
+                    <div class="col-auto">
                         <div class="header-logo">
                             <a href="{{ url('') }}">
                                 <img class="logo-main" src="{{ asset('assets/images/logo.png') }}" width="95"
@@ -71,17 +71,17 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-6 d-none d-lg-block">
+                    <div class="col d-lg-block">
                         <div class="header-navigation">
-                            <ul class="main-nav justify-content-start">
-                                <li><a href="{{ url('') }}">home</a></li>
-                                <li><a href="{{ url('about-us') }}">about</a></li>
-                                <li><a href="{{ url('shop') }}">shop</a></li>
-                                <li><a href="{{ url('contact') }}">Contact</a></li>
+                            <ul class="main-nav justify-content-end">
+                                <li><a href="{{ url('') }}">الرئيسية</a></li>
+                                <li><a href="{{ url('shop') }}">المتجر</a></li>
+                                <li><a href="{{ url('about-us') }}">من نحن</a></li>
+                                <li><a href="{{ url('contact') }}">تواصل معنا</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-7 col-sm-6 col-lg-3">
+                    <div class="col-auto">
                         <div class="header-action justify-content-end">
                             {{-- <button class="header-action-btn ms-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasSearch" aria-controls="AsideOffcanvasSearch">
                                 <span class="icon">
@@ -159,20 +159,22 @@
                                     <a class="widget-logo" href="{{ url('') }}">
                                         <img src="{{asset('assets/images/logo.png')}}" width="95" height="68" alt="Logo">
                                     </a>
-                                    <p class="desc">From the boldest to the softest and most subtle, we have something for every personality and every occasion.</p>
+                                    <p class="desc">
+                                        من الأجرأ إلى الأكثر نعومة ودقة ، لدينا ما يناسب كل شخصية وكل مناسبة.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-5 mt-md-0 mt-9">
                             <div class="widget-item">
-                                <h4 class="widget-title">Information</h4>
+                                <h4 class="widget-title">معلومات</h4>
                                 <ul class="widget-nav">
                                     {{-- <li><a href="{{ url('blog') }}">Blog</a></li> --}}
-                                    <li><a href="{{ url('about-us') }}">About us</a></li>
-                                    <li><a href="{{ url('contact') }}">Contact</a></li>
-                                    <li><a href="{{ url('privacy-policy') }}">Privacy policy</a></li>
+                                    <li><a href="{{ url('about-us') }}">من نحن</a></li>
+                                    <li><a href="{{ url('contact') }}">تواصل معنا</a></li>
+                                    <li><a href="{{ url('privacy-policy') }}">سياسة الخصوصية</a></li>
                                     {{-- <li><a href="{{ url('account-login') }}">Login</a></li> --}}
-                                    <li><a href="{{ url('shop') }}">Shop</a></li>
+                                    <li><a href="{{ url('shop') }}">المتجر</a></li>
                                     {{-- <li><a href="{{ url('my-account') }}">My Account</a></li> --}}
                                     {{-- <li><a href="{{ url('faq') }}">FAQs</a></li> --}}
                                 </ul>
@@ -180,7 +182,7 @@
                         </div>
                         <div class="col-md-6 col-lg-3 mt-lg-0 mt-6">
                             <div class="widget-item">
-                                <h4 class="widget-title">Social Info</h4>
+                                <h4 class="widget-title">علومات التواصل الاجتماعي</h4>
                                 <div class="widget-social">
                                     {{-- <a href="https://twitter.com/" target="_blank" rel="noopener"><i
                                             class="fa fa-twitter"></i></a> --}}

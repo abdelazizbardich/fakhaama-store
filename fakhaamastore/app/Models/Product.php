@@ -40,6 +40,22 @@ class Product extends Model
         "materials" => "array"
     ];
 
+    protected $fillable = [
+        "name",
+        "category_id",
+        "old_price",
+        "actual_price",
+        "weight",
+        "dimentions",
+        "materials",
+        "in_stock",
+        "in_slider",
+        "photo",
+        "gallery",
+        "short_description",
+        "description",
+    ];
+
 
     protected static function boot()
     {

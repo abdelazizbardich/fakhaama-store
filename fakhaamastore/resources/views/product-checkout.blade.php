@@ -5,9 +5,9 @@
         <!--== Start Page Header Area Wrapper ==-->
         <nav aria-label="breadcrumb" class="breadcrumb-style1">
             <div class="container">
-                <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="{{url('')}}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                <ol class="breadcrumb justify-content-center" dir="ltr">
+                    <li class="breadcrumb-item"><a href="{{url('')}}">الرئيسية</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">الدفع</li>
                 </ol>
             </div>
         </nav>
@@ -68,19 +68,19 @@
                                 <input type="hidden" hidden value="{{$order->quantity}}" name="quantity"/>
                                 <!--== Start Billing Accordion ==-->
                                 <div class="checkout-billing-details-wrap">
-                                    <h2 class="title">Billing details</h2>
+                                    <h2 class="title">تفاصيل الفاتورة</h2>
                                     <div class="billing-form-wrap">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="f_name">First name <abbr class="required" title="required">*</abbr></label>
-                                                        <input id="f_name" value="{{ old('first_name') }}" placeholder="first name..." name="first_name" type="text" class="form-control">
+                                                        <label for="f_name">الاسم الأول <abbr class="required" title="required">*</abbr></label>
+                                                        <input id="f_name" value="{{ old('first_name') }}" placeholder="الاسم الأول..." name="first_name" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="l_name">Last name <abbr class="required" title="required">*</abbr></label>
-                                                        <input id="l_name" value="{{ old('last_name') }}" placeholder="last name..." name="last_name" type="text" class="form-control">
+                                                        <label for="l_name">اسم العائلة <abbr class="required" title="required">*</abbr></label>
+                                                        <input id="l_name" value="{{ old('last_name') }}" placeholder="اسم العائلة..." name="last_name" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 {{-- <div class="col-md-12">
@@ -91,13 +91,13 @@
                                                 </div> --}}
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label for="phone">Phone  <abbr class="required" title="required">*</abbr></label>
-                                                        <input id="phone" value="{{ old('phone') }}" placeholder="Phone number..." name="phone" type="text" class="form-control">
+                                                        <label for="phone">رقم الهاتف  <abbr class="required" title="required">*</abbr></label>
+                                                        <input id="phone" value="{{ old('phone') }}" placeholder="رقم الهاتف..." name="phone" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12 mb-4">
                                                     <div class="form-group">
-                                                        <label for="country">Country <abbr class="required" title="required">*</abbr></label>
+                                                        <label for="country">الدولة <abbr class="required" title="required">*</abbr></label>
                                                         <select id="country" value="{{ old('country') }}" name="country" class="form-control wide">
                                                             <option value="Morocco">Morocco</option>
                                                         </select>
@@ -105,17 +105,17 @@
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label for="street-address">Street address <abbr class="required" title="required">*</abbr></label>
-                                                        <input id="street-address" value="{{ old('address') }}" name="address" type="text" class="form-control" placeholder="House number and street name">
+                                                        <label for="street-address">عنوان الشارع <abbr class="required" title="required">*</abbr></label>
+                                                        <input id="street-address" value="{{ old('address') }}" name="address" type="text" class="form-control" placeholder="رقم المنزل واسم الشارع">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="street-address2" class="visually-hidden">Street address 2</label>
-                                                        <input id="street-address2" value="{{ old('address_2') }}" name="address_2" type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
+                                                        <label for="street-address2" class="visually-hidden">عنوان الشارع 2</label>
+                                                        <input id="street-address2" value="{{ old('address_2') }}" name="address_2" type="text" class="form-control" placeholder="شقة، جناح، وحدة الخ (اختياري)">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label for="town">Town / City <abbr class="required" title="required">*</abbr></label>
+                                                        <label for="town">البلدة / المدينة <abbr class="required" title="required">*</abbr></label>
                                                         <select id="town" name="city" value="{{ old('city') }}" class="form-control wide">
                                                             <option disabled selected>City...</option>
                                                             <option>Casablanca</option>
@@ -190,7 +190,7 @@
                                                 </div>
                                                 <div class="col-md-12 mb-4">
                                                     <div class="form-group">
-                                                        <label for="region">Region <abbr class="required" title="required">*</abbr></label>
+                                                        <label for="region">الإقليم / الجهة <abbr class="required" title="required">*</abbr></label>
                                                         <select id="region" value="{{ old('region') }}" name="region" class="form-control wide">
                                                             <option value="" disabled selected>Region...</option>
                                                             <option value="Tanger-Tétouan-Al Hoceïma">Tanger-Tétouan-Al Hoceïma</option>
@@ -210,13 +210,13 @@
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label for="pz-code">Postcode / ZIP (optional)</label>
+                                                        <label for="pz-code">الرمز البريدي / الرمز البريدي (اختياري)</label>
                                                         <input id="pz-code" value="{{ old('postal_code') }}" name="postal_code" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label for="email">Email address <abbr class="required" title="required">*</abbr></label>
+                                                        <label for="email">عنوان البريد الإلكتروني <abbr class="required" title="required">*</abbr></label>
                                                         <input id="email" value="{{ old('email') }}" name="email" type="text" class="form-control">
                                                     </div>
                                                 </div>
@@ -309,8 +309,8 @@
                                                 </div> --}}
                                                 <div class="col-md-12">
                                                     <div class="form-group mb-0">
-                                                        <label for="order-notes">Order notes (optional)</label>
-                                                        <textarea value="{{ old('order_note') }}" id="order-notes" name="order_note" class="form-control" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                                        <label for="order-notes">ملاحظات الطلب (اختياري)</label>
+                                                        <textarea value="{{ old('order_note') }}" id="order-notes" name="order_note" class="form-control" placeholder="ملاحظات حول طلبك ، على سبيل المثال ملاحظات خاصة للتسليم."></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -322,19 +322,19 @@
                                 <!--== Start Order Details Accordion ==-->
                                 <div class="checkout-order-details-wrap">
                                     <div class="order-details-table-wrap table-responsive">
-                                        <h2 class="title mb-25">Your order</h2>
+                                        <h2 class="title mb-25">طلبك</h2>
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th class="product-name">Product</th>
+                                                    <th class="product-name">المنتج</th>
                                                     <th></th>
-                                                    <th class="product-total">Total</th>
+                                                    <th class="product-total">المجموع</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="table-body">
                                                 <tr class="cart-item">
                                                     <td class="product-photo">
-                                                        <img src="{{$order->product->photo}}" width="50" class="border rounded" alt="">
+                                                        <img src="{{asset('storage/'.$order->product->photo)}}" width="50" class="border rounded" alt="">
                                                     </td>
                                                     <td class="product-name">{{$order->product->name}} <span class="product-quantity">× {{$order->quantity}}</span></td>
                                                     <td class="product-total">{{$order->product->actual_price}} {{ config('app')['currency_symbol'] }}</td>
@@ -342,12 +342,12 @@
                                             </tbody>
                                             <tfoot class="table-foot">
                                                 <tr class="cart-subtotal">
-                                                    <th>Subtotal</th>
+                                                    <th>المجموع الفرعي</th>
                                                     <td></td>
                                                     <td>{{ $order->product->actual_price * $order->quantity }} {{ config('app')['currency_symbol'] }}</td>
                                                 </tr>
                                                 <tr class="shipping">
-                                                    <th>Shipping</th>
+                                                    <th>التوصيل</th>
                                                     <td></td>
                                                     @if(config('app')['shipping_cost'] == 0)
                                                     <td>0.00 {{ config('app')['currency_symbol'] }}</td>
@@ -356,9 +356,9 @@
                                                     @endIf
                                                 </tr>
                                                 <tr class="order-total">
-                                                    <th>Total </th>
+                                                    <th>المجموع </th>
                                                     <td></td>
-                                                    <td class="fw-bold text-primary" >{{ ($order->product->actual_price * $order->quantity)+config('app')['shipping_cost'] }}{{ config('app')['currency_symbol'] }}</td>
+                                                    <td class="fw-bold text-primary" >{{ ($order->product->actual_price * $order->quantity)+config('app')['shipping_cost'] }} {{ config('app')['currency_symbol'] }}</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -386,11 +386,11 @@
                                                 </div> --}}
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5 class="title" >Cash on delivery</h5>
+                                                        <h5 class="title" >الدفع عند الاستلام</h5>
                                                     </div>
                                                     <div id="itemThree" class="collapse show" aria-labelledby="check_payments3" data-bs-parent="#PaymentMethodAccordion">
                                                         <div class="card-body">
-                                                            <p>Pay with cash upon delivery.</p>
+                                                            <p>ادفع نقدا عند الاستلام.</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -405,14 +405,14 @@
                                                     </div>
                                                 </div> --}}
                                             </div>
-                                            <p class="p-text">Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="{{ url('privacy-policy') }}">privacy policy.</a></p>
+                                            <p class="p-text">سيتم استخدام بياناتك الشخصية لمعالجة طلبك ودعم تجربتك في جميع أنحاء هذا الموقع ولأغراض أخرى موصوفة في موقعنا <a href="{{ url('privacy-policy') }}">سياسة الخصوصية.</a></p>
                                             <div class="agree-policy">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" name="privacy" style="opacity: 0;margin-left: -23px;" id="privacy" class="custom-control-input visually-hidden">
-                                                    <label for="privacy" class="custom-control-label">I have read and agree to the website terms and conditions <span class="required">*</span></label>
+                                                    <label for="privacy" class="custom-control-label">لقد قرأت ووافقت على شروط وأحكام الموقع <span class="required">*</span></label>
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn py-3 h-auto btn-place-order">Confirm order</button>
+                                            <button type="submit" class="btn py-3 h-auto btn-place-order">تأكيد الطلب</button>
                                         </div>
                                     </div>
                                 </div>

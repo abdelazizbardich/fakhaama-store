@@ -8,16 +8,16 @@
                     <div class="col-md-5">
                         <div class="page-header-st3-content text-center text-md-start">
                             <ol class="breadcrumb justify-content-center justify-content-md-start">
-                                <li class="breadcrumb-item"><a class="text-dark" href="{{ url('') }}">Home</a></li>
-                                <li class="breadcrumb-item"><a class="text-dark" href="{{ url('shop') }}">Shop</a></li>
-                                <li class="breadcrumb-item"><span class="text-dark">checkout</span></li>
-                                <li class="breadcrumb-item active text-dark" aria-current="page">Order submited</li>
+                                <li class="breadcrumb-item"><a class="text-dark" href="{{ url('') }}">الرئيسية</a></li>
+                                <li class="breadcrumb-item"><a class="text-dark" href="{{ url('shop') }}">المتجر</a></li>
+                                <li class="breadcrumb-item"><span class="text-dark">الدفع</span></li>
+                                <li class="breadcrumb-item active text-dark" aria-current="page">تم تقديم الطلب</li>
                             </ol>
-                            <h2 class="page-header-title">Order submited</h2>
+                            <h2 class="page-header-title">تم تقديم الطلب</h2>
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <h5 class="showing-pagination-results mt-5 mt-md-9 text-center text-md-end">Order summary</h5>
+                        <h5 class="showing-pagination-results mt-5 mt-md-9 text-center text-md-start">ملخص الطلب</h5>
                     </div>
                 </div>
             </div>
@@ -34,10 +34,10 @@
                             <div class="px-2 py-5">
                                 <div class="row m-0 mb-3">
                                     <div class="col-12">
-                                        <h3 class="title mt-3">Your Order is submitted</h3>
-                                        <div class="d-blok">Hi <span class="fw-bold">{{ $user->first_name }}
+                                        <h3 class="title mt-3">تم تقديم طلبك</h3>
+                                        <div class="d-blok">مرحبا <span class="fw-bold">{{ $user->first_name }}
                                                 {{ $user->last_name }}</span></div>
-                                        <p>Your Order has been submitted to our Sales Team and will be confirmed soon as possible</p>
+                                        <p>تم إرسال طلبك إلى فريق المبيعات لدينا وسيتم تأكيده في أقرب وقت ممكن</p>
                                     </div>
                                 </div>
                                 <div class="row m-0">
@@ -45,16 +45,16 @@
                                         <div class="table-responsive  border-top">
                                             <table class="table table-borderless">
                                                 <thead>
-                                                    <th>Order Date</th>
-                                                    <th>Order code</th>
-                                                    <th>Payment</th>
-                                                    <th>Address</th>
+                                                    <th>تاريخ الطلب</th>
+                                                    <th>رمز الطلب</th>
+                                                    <th>الدفع</th>
+                                                    <th>العنوان</th>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td>{{ explode(' ', $order->created_at)[0] }}</td>
                                                         <td>{{ $order->code }}</td>
-                                                        <td>Cash on delevery</td>
+                                                        <td>الدفع عند الاستلام</td>
                                                         <td>
                                                             <span class="small country">{{ $address->country }}</span>,
                                                             <span class="small country">{{ $address->region }}</span>,
@@ -74,19 +74,19 @@
                                             <table class="table table-borderless">
                                                 <tbody>
                                                     <tr>
-                                                        <th>Order Date</th>
+                                                        <th>تاريخ الطلب</th>
                                                         <td>{{ explode(' ', $order->created_at)[0] }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <th>Order code</th>
+                                                        <th>رمز الطلب</th>
                                                         <td>{{ $order->code }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <th>Payment</th>
+                                                        <th>الدفع</th>
                                                         <td>Cash on delevery</td>
                                                     </tr>
                                                     <tr>
-                                                        <th>Address</th>
+                                                        <th>العنوان</th>
                                                         <td>
                                                             <span class="small country">{{ $address->country }}</span>,
                                                             <span class="small country">{{ $address->region }}</span>,
@@ -106,23 +106,21 @@
                                     <div class="col-12 ">
                                         <div class="row flex-column flex-md-row m-0">
                                             <div class="col-auto d-flex align-items-center">
-                                                <img class="p-1 bg-light border rounded" src="{{ $product->photo }}"
+                                                <img class="p-1 bg-light border rounded" src="{{ asset('storage/'.$product->photo) }}"
                                                     alt="" width="120">
                                             </div>
                                             <div class="col d-flex justify-content-center flex-column">
                                                 <span class="d-block">
                                                     <span class="h3">{{ $product->name }}</span>
-                                                    <span class="small">({{ $product->actual_price }}
-                                                        {{ config('app')['currency_symbol'] }})</span>
+                                                    <span class="small">({{ $product->actual_price }} {{ config('app')['currency_symbol'] }})</span>
                                                 </span>
                                                 <span class="small">{{ $product->category->name }}</span>
                                             </div>
                                             <div class="col-auto d-flex align-items-center">
-                                                <span>Qty {{ $quantity }}</span>
+                                                <span>الكمية {{ $quantity }}</span>
                                             </div>
                                             <div class="col-auto d-flex align-items-center">
-                                                <span class="fw-bold">{{ $product->actual_price * $quantity }}
-                                                    {{ config('app')['currency_symbol'] }}</span>
+                                                <span class="fw-bold">{{ $product->actual_price * $quantity }} {{ config('app')['currency_symbol'] }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -134,15 +132,12 @@
                                             <table class="table table-borderless">
                                                 <tbody>
                                                     <tr>
-                                                        <th>Subtotal</th>
-                                                        <td class="text-end fw-bold">
-                                                            {{ $product->actual_price * $quantity }}
-                                                            {{ config('app')['currency_symbol'] }}</td>
+                                                        <th>المجموع الفرعي</th>
+                                                        <td class="text-end fw-bold">{{ $product->actual_price * $quantity }} {{ config('app')['currency_symbol'] }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <th>Shipping cost</th>
-                                                        <td class="text-end fw-bold">{{ config('app')['shipping_cost'] }}
-                                                            {{ config('app')['currency_symbol'] }}</td>
+                                                        <th>تكلفة التوصيل</th>
+                                                        <td class="text-end fw-bold">{{ config('app')['shipping_cost'] }} {{ config('app')['currency_symbol'] }}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -155,10 +150,9 @@
                                             <table class="table table-borderless">
                                                 <tbody>
                                                     <tr>
-                                                        <th>Total</th>
+                                                        <th>المجموع</th>
                                                         <td class="text-end fw-bold text-primary">
-                                                            {{ $product->actual_price * $quantity + config('app')['shipping_cost'] }}
-                                                            {{ config('app')['currency_symbol'] }}</td>
+                                                            {{ $product->actual_price * $quantity + config('app')['shipping_cost'] }} {{ config('app')['currency_symbol'] }}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -169,7 +163,7 @@
                                     <div class="col-12">
                                         <div class="pt-5">
                                             <p>
-                                                We'll send you a shipping confirmation when your order is confirmed!<br>We apperciate your business, and hope you enjoy your purchase.
+                                                سنرسل لك تأكيدًا للشحن عند تأكيد طلبك! <br> نحن نقدر عملك ، ونأمل أن تستمتع بعملية الشراء.
                                             </p>
                                             {{-- <p class="fw-bold">Thank you!</p>
                                             <p>Sales team</p> --}}
@@ -181,10 +175,10 @@
                             <div class="w-100 bg-light mt-5 py-3 p-2">
                                 <div class="row m-0">
                                     <div class="col-6">
-                                        <span class="small">Qestion? contact our <a href="mailto:{{ config('app.support_email') }}">Customer Support</a></span>
+                                        <span class="small">سؤال؟ اتصل ب<a class="text-primary" href="mailto:{{ config('app.support_email') }}">دعم العملاء لدينا</a></span>
                                     </div>
-                                    <div class="col-6 text-end">
-                                        {{ date('Y') }} | {{ config('app.name')}} Sales team
+                                    <div class="col-6 text-start">
+                                        {{ date('Y') }} | {{ config('app.name')}} فريق المبيعات
                                     </div>
                                 </div>
                             </div>
@@ -193,7 +187,7 @@
                 </div>
                 <div class="col-12 text-center mb-5 pb-5">
                     <a href="" class="btn btn-primary rounded shadow">
-                        Contine shopping
+                        مواصلة التسوق
                     </a>
                 </div>
                 <div>

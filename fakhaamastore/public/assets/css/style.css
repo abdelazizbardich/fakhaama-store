@@ -25,6 +25,7 @@
 /*  01. Template default CSS
 /*----------------------------------------*/
 /* Common Style */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
 *, *::after, *::before {
   box-sizing: border-box;
 }
@@ -34,7 +35,8 @@ html, body {
 }
 
 body {
-  font-family: "Inter", sans-serif, Arial, Helvetica, sans-serif;
+  /* font-family: "Inter", sans-serif, Arial, Helvetica, sans-serif; */
+  font-family: 'Tajawal', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   font-style: normal;
@@ -62,7 +64,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Tajawal', sans-serif;
   font-weight: 500;
   line-height: 1.2;
   margin-top: 0;
@@ -1071,6 +1073,14 @@ hr {
   font-size: 28px;
   font-weight: 400;
   margin-bottom: 0;
+  text-align: initial;
+}
+
+.page-header-st3-content.text-center.text-md-start {
+    direction: ltr;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 .showing-pagination-results {
@@ -1429,7 +1439,7 @@ hr {
   display: inline-block;
   font-size: 14px;
   height: 50px;
-  letter-spacing: 7px;
+  letter-spacing: 0px;
   line-height: 37px;
   padding: 5px 25px 5px 37px;
   text-align: center;
@@ -1440,7 +1450,7 @@ hr {
     padding: 5px 18px 5px 25px;
     height: 48px;
     line-height: 35px;
-    letter-spacing: 5px;
+    letter-spacing: 0px;
   }
 }
 .btn:hover {
@@ -1471,7 +1481,7 @@ hr {
 .btn.btn-sm {
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.5em;
+  letter-spacing: 0px;
   padding: 5px 41px 5px 47px;
 }
 
@@ -1637,9 +1647,10 @@ hr {
   background: none;
   border-radius: 0;
   padding: 0 18px 0 0;
+  text-align: right !important;
 }
 .nice-select .current {
-  margin-right: 0;
+  margin-right: 1rem;
 }
 .nice-select .option {
   font-size: 14px;
@@ -1647,6 +1658,9 @@ hr {
   min-height: 35px;
   border-bottom: 1px solid #eee;
   padding: 2px 20px;
+}
+.nice-select .option{
+    text-align: right;
 }
 .nice-select .option:last-child {
   border-bottom: none;
@@ -3789,7 +3803,7 @@ hr {
   }
 }
 .product-details-cart-wishlist .btn {
-  letter-spacing: 2px;
+  letter-spacing: 0px;
   font-weight: 500;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
@@ -3986,7 +4000,7 @@ hr {
   }
 }
 .product-quick-view-content .product-details-content .product-details-cart-wishlist .btn {
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   font-weight: 500;
   font-size: 12px;
   padding: 0 20px 0;
@@ -4214,19 +4228,19 @@ hr {
   }
 }
 .product-reviews-form .select-ratings {
-  width: 80px;
-  height: 50px;
-  border: 2px solid #E63946;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #231942;
-  align-items: center;
-  display: flex;
-  padding: 7px 24px 5px 5px;
-  justify-content: flex-end;
+    width: 80px;
+    height: 50px;
+    border: 2px solid #E63946;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #231942;
+    align-items: center;
+    display: flex;
+    padding: 7px 24px 5px 5px;
+    justify-content: center;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
   .product-reviews-form .select-ratings {
@@ -4241,14 +4255,16 @@ hr {
   display: none;
 }
 .product-reviews-form .select-ratings:before {
+    display: none;
   content: "";
+  /*
   background-color: #231942;
   width: 2px;
   height: 18px;
   position: absolute;
   right: 22px;
   top: 50%;
-  transform: translate(0px, -50%);
+  transform: translate(0px, -50%); */
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
   .product-reviews-form .select-ratings:before {
@@ -4277,7 +4293,7 @@ hr {
   width: 0%;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   transition: all 0.5s ease 0s;
 }
 
@@ -5126,7 +5142,7 @@ hr {
   }
 }
 .checkout-order-details-wrap .order-details-table-wrap .table .product-total {
-  text-align: right;
+  text-align: left;
 }
 .checkout-order-details-wrap .order-details-table-wrap .table .cart-item {
   line-height: 20px;
@@ -5140,7 +5156,7 @@ hr {
 }
 .checkout-order-details-wrap .order-details-table-wrap .table .shipping td {
   min-width: 140px;
-  text-align: right;
+  text-align: left;
 }
 .checkout-order-details-wrap .order-details-table-wrap .table .product-quantity {
   color: #000000;
@@ -5149,7 +5165,7 @@ hr {
   border-top: none;
 }
 .checkout-order-details-wrap .order-details-table-wrap .table-foot td {
-  text-align: right;
+  text-align: left;
 }
 .checkout-order-details-wrap .order-details-table-wrap .table-foot td,
 .checkout-order-details-wrap .order-details-table-wrap .table-foot th {
@@ -5291,7 +5307,7 @@ hr {
   padding-left: 0px;
   line-height: 14px;
   box-shadow: none;
-  left: 4px;
+  right: 4px;
   top: 7px;
   transition: all 0.1s ease-out;
   -webkit-transition: all 0.1s ease-out;
@@ -5303,7 +5319,7 @@ hr {
   color: #000000;
   font-size: 14px;
   margin-bottom: 0;
-  padding-left: 0;
+  padding-right: 25px;
   padding-top: 0;
   cursor: pointer;
 }
@@ -5319,7 +5335,7 @@ hr {
   border-width: 2px;
   border-style: solid;
   top: 7px;
-  left: 0;
+  right: 0;
   transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -6628,7 +6644,7 @@ hr {
   background-color: #262626;
   border-color: #262626;
   font-size: 12px;
-  letter-spacing: 1.5px;
+  letter-spacing: 0px;
 }
 .my-account-form .btn:hover {
   background-color: #FF6565;
@@ -6733,7 +6749,7 @@ hr {
   font-size: 14px;
   font-weight: 400;
   height: 56px;
-  padding: 10px 64px 10px 18px;
+  padding: 10px 18px 10px 64px;
   width: 100%;
 }
 .product-sidebar-widget .product-widget-search [type=search]::-webkit-input-placeholder {
@@ -6765,8 +6781,11 @@ hr {
   width: 60px;
   position: absolute;
   color: #919191;
-  border-left: 1px solid #e9e9e9;
-  right: 0;
+  border-right: 1px solid #e9e9e9;
+  left: 0;
+}
+.main-nav > li > a {
+    font-weight: 600;
 }
 .product-sidebar-widget .product-widget-search [type=submit]:hover {
   color: #FF6565;
@@ -7270,4 +7289,13 @@ hr {
   border-top: 0;
   font-size: 14px;
   padding: 18px 24px 18px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    /* margin-top: 0; */
+    /* margin-bottom: 0.5rem; */
+    font-family: 'Tajawal', sans-serif;
+    /* font-weight: 500;
+    line-height: 1.2;
+    color: #231942; */
 }

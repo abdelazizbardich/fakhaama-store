@@ -27,7 +27,7 @@ return new class extends Migration
             $table->json('materials')->nullable();
             $table->longText('other_infos')->nullable();
             $table->integer('in_stock')->unsigned()->nullable();
-            $table->boolean('home_slider')->nullable();
+            $table->boolean('home_slider')->default(false);
             $table->timestamps();
 
             $table->unsignedBigInteger('category_id');

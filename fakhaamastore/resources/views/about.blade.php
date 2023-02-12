@@ -10,7 +10,7 @@
                             <div class="title-img"><img src="assets/images/photos/about-title.webp" alt="Image"></div>
                             <h2 class="page-header-title">{{ config('app.name')}}</h2>
                             <h4 class="page-header-sub-title">{{ config('app.subtitle') }}</h4>
-                            <p class="page-header-desc">Our range of luxury parfum has been hand-selected to bring you the finest scents from around the world. Daring to soft and subtle, we have something for every personality and occasion.</p>
+                            <p class="page-header-desc">تم اختيار مجموعتنا من العطور الفاخرة يدويًا لتجلب لك أرقى الروائح من جميع أنحاء العالم. الجرأة على الرقة والبراعة ، لدينا شيء لكل شخصية ومناسبة.</p>
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-5 col-xl-5">
@@ -34,7 +34,7 @@
                                 <img src="assets/images/icons/funfact1.webp" width="110" height="110" alt="Icon">
                             </div>
                             <h2 class="funfact-number">500+</h2>
-                            <h6 class="funfact-title">Clients</h6>
+                            <h6 class="funfact-title">زبون</h6>
                         </div>
                         <!--== End Funfact Item ==-->
                     </div>
@@ -45,7 +45,7 @@
                                 <img src="assets/images/icons/funfact2.webp" width="110" height="110" alt="Icon">
                             </div>
                             <h2 class="funfact-number">2500+</h2>
-                            <h6 class="funfact-title">Product sold</h6>
+                            <h6 class="funfact-title">منتجات مباعة</h6>
                         </div>
                         <!--== End Funfact Item ==-->
                     </div>
@@ -56,7 +56,7 @@
                                 <img src="assets/images/icons/funfact3.webp" width="110" height="110" alt="Icon">
                             </div>
                             <h2 class="funfact-number">70+</h2>
-                            <h6 class="funfact-title">Client feedback</h6>
+                            <h6 class="funfact-title">ملاحظات العملاء</h6>
                         </div>
                         <!--== End Funfact Item ==-->
                     </div>
@@ -103,15 +103,15 @@
                     <img src="assets/images/photos/about2.webp" alt="Image">
                 </div>
                 <div class="about-content">
-                    <h2 class="title">Best parfum Provider</h2>
-                    <p class="desc">Welcome to the official {{ config('app.name')}} page We are so excited to share our passion for fragrances with all of you. Our collection of luxury fragrances has been hand-selected to bring you the finest scents from around the world. Daring to soft and subtle, we have something for every personality and occasion. Follow our page to stay updated With our latest products, special offers and exciting events, we can't wait to take this aromatic journey with you. Let the scent of luxury fill your life.</p>
+                    <h2 class="title">أفضل مزود للعطور</h2>
+                    <p class="desc">أهلا بك في {{ config('app.name')}} نحن متحمسون جدًا لمشاركة شغفنا بالعطور معكم جميعًا. تم اختيار مجموعتنا من العطور الفاخرة يدويًا لتجلب لك أرقى الروائح من جميع أنحاء العالم. الجرأة على الرقة والبراعة ، لدينا شيء لكل شخصية ومناسبة. تابع صفحتنا لتبقى على اطلاع دائم بأحدث منتجاتنا وعروضنا الخاصة والأحداث المثيرة ، لا يمكننا الانتظار لأخذ هذه الرحلة العطرية معك. دع رائحة الفخامة تملأ حياتك.</p>
                 </div>
             </div>
         </section>
         <!--== End About Area Wrapper ==-->
 
         <!--== Start Feature Area Wrapper ==-->
-        <div class="feature-area section-space">
+        {{-- <div class="feature-area section-space">
             <div class="container">
                 <div class="row mb-n9">
                     <div class="col-md-6 col-lg-4 mb-8">
@@ -146,7 +146,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!--== End Feature Area Wrapper ==-->
 
     </main>

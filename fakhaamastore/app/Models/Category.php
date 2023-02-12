@@ -12,6 +12,10 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "name",
+        "photo"
+    ];
 
     /**
      * Get all of the products for the Category

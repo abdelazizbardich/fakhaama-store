@@ -7,16 +7,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5">
-                        <div class="page-header-st3-content text-center text-md-start">
-                            <ol class="breadcrumb justify-content-center justify-content-md-start">
-                                <li class="breadcrumb-item"><a class="text-dark" href="{{ url('') }}">Home</a></li>
-                                <li class="breadcrumb-item active text-dark" aria-current="page">Product Detail</li>
+                        <div class="page-header-st3-content text-start text-md-start">
+                            <ol class="breadcrumb justify-content-center justify-content-md-end" dir="ltr">
+                                <li class="breadcrumb-item"><a class="text-dark" href="{{ url('') }}">الرئيسية</a></li>
+                                <li class="breadcrumb-item active text-dark" aria-current="page">معلومات المنتج</li>
                             </ol>
-                            <h2 class="page-header-title">Product Detail</h2>
+                            <h2 class="page-header-title text-center text-md-end">معلومات المنتج</h2>
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <h5 class="showing-pagination-results mt-5 mt-md-9 text-center text-md-end">Showing Single Product</h5>
+                        <h5 class="showing-pagination-results mt-5 mt-md-9 text-center text-md-start">عرض المنتج</h5>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="row product-details">
                     <div class="col-lg-6">
                         <div class="product-details-thumb">
-                            <img src="{{ $product->photo }}" width="570" height="693" alt="Image">
+                            <img src="{{ asset('storage/'.$product->photo) }}" width="570" height="693" alt="Image">
                             <span class="flag-new">{{ $product->category->name }}</span>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                                         <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 4)?'':'-o' }}"></i>
                                         <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 5)?'':'-o' }}"></i>
                                     </div>
-                                    <button type="button" class="product-review-show">{{ $product->reviews->count() }} reviews</button>
+                                    <button type="button" class="product-review-show me-2">{{ $product->reviews->count() }} التقيمات</button>
                                 </div>
                                 {{-- <div class="product-details-qty-list">
                                     <div class="qty-list-check">
@@ -64,19 +64,22 @@
                                         <input type="text" name="quantity" title="Quantity" value="01">
                                     </div>
                                 </div>
-                                {{-- <div class="product-details-shipping-cost">
-                                    <input class="form-check-input" type="checkbox" value="" id="ShippingCost" checked>
-                                    <label class="form-check-label" for="ShippingCost">Shipping from USA, Shipping Fees $4.22</label>
-                                </div> --}}
+                                <div class="product-details-shipping-cost">
+                                    <p>
+                                        {{ $product->short_description}}
+                                    </p>
+                                    {{-- <input class="form-check-input" type="checkbox" value="" checked>
+                                    <label class="form-check-label" for="ShippingCost">Shipping from USA, Shipping Fees $4.22</label> --}}
+                                </div>
                                 <div class="product-details-action mb-3">
-                                    <span class="me-1 text-danger fw-bold display-4">{{ $product->actual_price}}{{config('app')['currency_symbol']}}</span>
-                                    <span class="text-decoration-line-through small">{{ $product->old_price }}{{config('app')['currency_symbol']}}</span>
+                                    <span class="ms-3 text-danger fw-bold display-4">{{ $product->actual_price}} {{config('app')['currency_symbol']}}</span>
+                                    <span class="text-decoration-line-through small">{{ $product->old_price }} {{config('app')['currency_symbol']}}</span>
                                 </div>
                                 <hr>
                                 <div class="d-flex mt-3">
                                     {{-- <button type="button" class="btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal"><i class="fa fa-heart-o"></i></button> --}}
-                                    <button type="submit" class="btn me-3" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Order Now</button>
-                                    <a href="{{"https://api.whatsapp.com/send?phone=".config('app.whatsupp_number')."&text=".urlencode('Hi, I would like to order this product:'.$product->name.', is it still available? '.url('/product-details/'.$product->id))}}" target="_blank" class="btn shadow btn-lg bg-success border-success d-flex align-items-center justify-content-between">Order by<i class="ms-3 fs-3 fa fa-whatsapp"></i> </a>
+                                    <button type="submit" class="btn ms-3" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">اطلب الان</button>
+                                    <a href="{{"https://api.whatsapp.com/send?phone=".config('app.whatsupp_number')."&text=".urlencode('مرحبًا ، أود أن أطلب هذا المنتج:'.$product->name.', هل مازال متوفرا؟ '.url('/product-details/'.$product->id))}}" target="_blank" class="btn shadow btn-lg bg-success border-success d-flex align-items-center justify-content-between">اطلب عبر<i class="ms-3 fs-3 fa fa-whatsapp"></i> </a>
                                 </div>
                             </div>
                         </form>
@@ -85,23 +88,23 @@
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="nav product-details-nav" id="product-details-nav-tab" role="tablist">
-                            <button class="nav-link active" id="specification-tab" data-bs-toggle="tab" data-bs-target="#specification" type="button" role="tab" aria-controls="specification" aria-selected="true">Specification</button>
-                            <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">Review</button>
+                            <button class="nav-link ms-5 active" id="specification-tab" data-bs-toggle="tab" data-bs-target="#specification" type="button" role="tab" aria-controls="specification" aria-selected="true">مواصفات</button>
+                            <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">التقيمات</button>
                         </div>
                         <div class="tab-content" id="product-details-nav-tabContent">
                             <div class="tab-pane fade show active" id="specification" role="tabpanel" aria-labelledby="specification-tab">
                                 <ul class="product-details-info-wrap">
-                                    <li><span>Weight</span>
+                                    <li><span>الوزن:</span>
                                         <p>{{ $product->weight }} g</p>
                                     </li>
-                                    <li><span>Dimensions</span>
+                                    <li><span>الأبعاد:</span>
                                         <p>{{ $product->dimentions['width'] }} x {{ $product->dimentions['height'] }} x {{ $product->dimentions['depth'] }} cm</p>
                                     </li>
-                                    <li><span>Materials</span>
+                                    <li><span>المكونات:</span>
                                         <p>{{implode(', ',$product->materials)}}
                                         </p>
                                     </li>
-                                    <li><span>Other Info</span>
+                                    <li><span>معلومات اخرى:</span>
                                         <p>{{ $product->other_infos }}</p>
                                     </li>
                                 </ul>
@@ -143,19 +146,19 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="product-reviews-form-wrap">
-                            <h4 class="product-form-title">Leave a replay</h4>
+                            <h4 class="product-form-title">اترك مراجعة</h4>
                             <div class="product-reviews-form">
                                 <form action="{{ url('/reviews') }}" method="POST">
                                     @csrf
                                     <input type="number" name="product_id" hidden  value="{{$product->id}}"/>
                                     <div class="form-input-item">
-                                        <textarea class="form-control" name="feedback" placeholder="Enter you feedback"></textarea>
+                                        <textarea class="form-control" name="feedback" placeholder="أدخل ملاحظاتك"></textarea>
                                     </div>
                                     <div class="form-input-item">
-                                        <input class="form-control" type="text" name="name" placeholder="Full Name">
+                                        <input class="form-control" type="text" name="name" placeholder="الاسم الكامل">
                                     </div>
                                     <div class="form-input-item">
-                                        <input class="form-control" type="email" name="email" placeholder="Email Address">
+                                        <input class="form-control" type="email" name="email" placeholder="عنوان البريد الإلكتروني">
                                     </div>
                                     <div class="form-input-item">
                                         <div class="form-ratings-item">
@@ -166,7 +169,7 @@
                                                 <option value="4">04</option>
                                                 <option value="5">05</option>
                                             </select>
-                                            <span class="title">Provide Your Ratings</span>
+                                            <span class="title">قدم تقييماتك</span>
                                             <div class="product-ratingsform-form-wrap">
                                                 <div class="product-ratingsform-form-icon">
                                                     <i class="fa fa-star-o"></i>
@@ -190,7 +193,7 @@
                                         </div> --}}
                                     </div>
                                     <div class="form-input-item mb-0">
-                                        <button type="submit" class="btn">SUBMIT</button>
+                                        <button type="submit" class="btn">إرسال</button>
                                     </div>
                                 </form>
                             </div>
@@ -217,8 +220,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title">
-                            <h2 class="title">Related Products</h2>
-                            <p class="m-0">Explore Additional Related Products</p>
+                            <h2 class="title">منتجات ذات صله</h2>
+                            <p class="m-0">استكشف المنتجات الإضافية ذات الصلة</p>
                         </div>
                     </div>
                 </div>
@@ -232,7 +235,7 @@
                                         <div class="product-item product-st2-item">
                                             <div class="product-thumb">
                                                 <a class="d-block" href="{{ url('product-details/'.$product->id) }}">
-                                                    <img src="{{ $product->photo }}" width="370" height="450" alt="Image-HasTech">
+                                                    <img src="{{ asset('storage/'.$product->photo) }}" width="370" height="450" alt="Image-HasTech">
                                                 </a>
                                                 <span class="flag-new">{{ $product->category->name }}</span>
                                             </div>
@@ -245,16 +248,16 @@
                                                         <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 4)?'':'-o' }}"></i>
                                                         <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 5)?'':'-o' }}"></i>
                                                     </div>
-                                                    <div class="reviews">{{$product->reviews->count()}} reviews</div>
+                                                    <div class="reviews">{{$product->reviews->count()}} التقييمات</div>
                                                 </div>
                                                 <h4 class="title"><a href="{{ url('product-details/'.$product->id) }}">{{ $product->name }}</a></h4>
                                                 <div class="prices">
-                                                    <span class="price">{{ $product->actual_price }}</span>
-                                                    <span class="price-old">{{ $product->old_price }}</span>
+                                                    <span class="price d-inline-block">{{ $product->actual_price }} {{config('app')['currency_symbol']}}</span>
+                                                    <span class="price-old d-inline-block">{{ $product->old_price }} {{config('app')['currency_symbol']}}</span>
                                                 </div>
                                                 <div class="product-action">
                                                     <a href="{{ url('product-details/'.$product->id) }}" type="button" class="btn py-1 product-action-btn action-btn-cart">
-                                                        <span>Order now</span>
+                                                        <span>اطلب الان</span>
                                                     </a>
                                                     {{-- <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
                                                         <i class="fa fa-expand"></i>

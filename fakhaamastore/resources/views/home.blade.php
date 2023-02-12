@@ -17,7 +17,7 @@
                                             <h2 class="hero-two-slide-title">{{$sliderElement->name}}</h2>
                                             <p class="hero-two-slide-desc">{{ $sliderElement->short_description }}</p>
                                             <div class="hero-two-slide-meta">
-                                                <a class="btn btn-border-primary" href="{{ url('product-details/'.$sliderElement->id) }}">Order now</a>
+                                                <a class="btn btn-border-primary" href="{{ url('product-details/'.$sliderElement->id) }}">اطلب الان</a>
                                                 {{-- <a class="ht-popup-video" data-fancybox data-type="iframe"
                                                     href="https://player.vimeo.com/video/172601404?autoplay=1">
                                                     <i class="fa fa-play icon"></i>
@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="hero-two-slide-thumb">
-                                            <img src="{{$sliderElement->photo}}" width="690" height="690"
+                                            <img src="{{asset('storage/'.$sliderElement->photo)}}" width="690" height="690"
                                                 alt="Image">
                                         </div>
                                     </div>
@@ -51,8 +51,8 @@
                         <div class="col-sm-6 col-lg-4">
                             <!--== Start Product Category Item ==-->
                             <a href="{{ url('shop?category='.$category->id) }}" class="product-banner-item">
-                                <img src="{{$category->photo}}" width="370" height="370" alt="Image-HasTech">
-                                <span class="h3 text-center w-100 d-block text-primary title">{{$category->name}}</span>
+                                <img src="{{asset('storage/'.$category->photo)}}" width="370" height="370" alt="Image-HasTech">
+                                <span style="position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);text-transform: uppercase;" class="h1 text-center w-100 d-block text-white fw-bold title">{{$category->name}}</span>
                             </a>
                             <!--== End Product Category Item ==-->
                         </div>
@@ -68,12 +68,12 @@
                 <div class="row">
                     <div class="col">
                         <div class="section-title">
-                            <h2 class="title">New Product</h2>
-                            <p class="m-0">Unlock Efficiency with Our Latest Innovation products</p>
+                            <h2 class="title">منتجات جديدة</h2>
+                            <p class="m-0">أطلق العنان للكفاءة مع أحدث منتجاتنا المبتكرة</p>
                         </div>
                     </div>
                     <div class="col-auto">
-                        <a href="{{ url('shop') }}" class="btn btn-primary"><span class="d-none d-md-inline-block" >Show</span> more <i class="fa fa-plus"></i></a>
+                        <a href="{{ url('shop') }}" class="btn btn-primary"><span class="d-none d-md-inline-block" >عرض</span> المزيد <i class="fa fa-plus"></i></a>
                     </div>
                 </div>
                 <div class="row mb-n4 mb-sm-n10 g-3 g-sm-6">
@@ -83,7 +83,7 @@
                         <div class="product-item product-st2-item">
                             <div class="product-thumb">
                                 <a class="d-block" href="{{ url('product-details/'.$product->id) }}">
-                                    <img src="{{$product->photo}}" width="370" height="450" alt="Image-HasTech">
+                                    <img src="{{asset('storage/'.$product->photo)}}" width="370" height="450" alt="Image-HasTech">
                                 </a>
                                 <span class="flag-new">{{$product->category->name}}</span>
                             </div>
@@ -96,16 +96,16 @@
                                         <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 4)?'':'-o' }}"></i>
                                         <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 5)?'':'-o' }}"></i>
                                     </div>
-                                    <div class="reviews">{{$product->reviews->count()}} reviews</div>
+                                    <div class="reviews">{{$product->reviews->count()}} التقيمات</div>
                                 </div>
                                 <h4 class="title"><a href="{{ url('product-details/'.$product->id) }}">{{$product->name}}</a></h4>
                                 <div class="prices">
-                                    <span class="price">{{ $product->actual_price }}{{ config('app')['currency_symbol'] }}</span>
-                                    <span class="price-old">{{ $product->old_price }}{{ config('app')['currency_symbol'] }}</span>
+                                    <span class="price d-inline-block">{{ $product->actual_price }} {{ config('app')['currency_symbol'] }}</span>
+                                    <span class="price-old d-inline-block">{{ $product->old_price }} {{ config('app')['currency_symbol'] }}</span>
                                 </div>
                                 <div class="product-action">
                                     <a href="{{ url('product-details/'.$product->id) }}" type="button" class="product-action-btn action-btn-cart">
-                                        <span>Order now</span>
+                                        <span>أطلب الآن</span>
                                     </a>
                                     {{-- <button type="button" class="product-action-btn action-btn-quick-view"
                                         data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
@@ -126,7 +126,7 @@
                                         <i class="fa fa-heart-o"></i>
                                     </button> --}}
                                     <a href="{{ url('product-details/'.$product->id) }}" type="button" class="product-action-btn action-btn-cart">
-                                        <span>Order now</span>
+                                        <span>أطلب الآن</span>
                                 </a>
                                 </div>
                             </div>
@@ -157,12 +157,12 @@
                 <div class="row">
                     <div class="col">
                         <div class="section-title">
-                            <h2 class="title">Top Sale Products</h2>
-                            <p class="m-0">Get the Best Bang for Your Buck: Our Top Selling Products</p>
+                            <h2 class="title">المنتجات الأكثر مبيعًا</h2>
+                            <p class="m-0">احصل على أفضل منتجاتنا الأكثر مبيعًا</p>
                         </div>
                     </div>
                     <div class="col-auto">
-                        <a href="{{ url('shop') }}" class="btn btn-primary"><span class="d-none d-md-inline-block" >Show</span> more <i class="fa fa-plus"></i></a>
+                        <a href="{{ url('shop') }}" class="btn btn-primary"><span class="d-none d-md-inline-block" >عرض</span> المزيد <i class="fa fa-plus"></i></a>
                     </div>
                 </div>
                 <div class="row mb-n4 mb-sm-n10 g-3 g-sm-6">
@@ -172,7 +172,7 @@
                         <div class="product-item product-st2-item">
                             <div class="product-thumb">
                                 <a class="d-block" href="{{ url('product-details/'.$product->product->id) }}">
-                                    <img src="{{ $product->product->photo }}" width="370" height="450"
+                                    <img src="{{ asset('storage/'.$product->product->photo) }}" width="370" height="450"
                                         alt="Image-HasTech">
                                 </a>
                                 <span class="flag-new">{{ $product->product->category->name }}</span>
@@ -186,16 +186,16 @@
                                         <i class="fa fa-star{{ (getRatingFromReviews($product->product->reviews) >= 4)?'':'-o' }}"></i>
                                         <i class="fa fa-star{{ (getRatingFromReviews($product->product->reviews) >= 5)?'':'-o' }}"></i>
                                     </div>
-                                    <div class="reviews">{{ $product->product->reviews->count() }} reviews</div>
+                                    <div class="reviews">{{ $product->product->reviews->count() }} التقيمات</div>
                                 </div>
                                 <h4 class="title"><a href="{{ url('product-details/'.$product->product->id) }}">{{ $product->product->name }}</a></h4>
                                 <div class="prices">
-                                    <span class="price">{{ $product->product->actual_price }}</span>
-                                    <span class="price-old">{{ $product->product->old_price }}</span>
+                                    <span class="price d-inline-block">{{ $product->product->actual_price }} {{config('app')['currency_symbol']}}</span>
+                                    <span class="price-old d-inline-block">{{ $product->product->old_price }} {{config('app')['currency_symbol']}}</span>
                                 </div>
                                 <div class="product-action">
                                     <a href="{{ url('product-details/'.$product->product->id) }}" type="button" class="product-action-btn action-btn-cart">
-                                        <span>Order now</span>
+                                        <span>أطلب الآن</span>
                                 </a>
                                     {{-- <button type="button" class="product-action-btn action-btn-quick-view"
                                         data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
@@ -216,7 +216,7 @@
                                         <i class="fa fa-heart-o"></i>
                                     </button> --}}
                                     <a href="{{ url('product-details/'.$product->product->id) }}" type="button" class="product-action-btn action-btn-cart">
-                                        <span>Order now</span>
+                                        <span>أطلب الآن</span>
                                 </a>
                                 </div>
                             </div>
@@ -235,14 +235,14 @@
                 <div class="newsletter-content-wrap" data-bg-img="assets/images/photos/bg1.webp">
                     <div class="newsletter-content">
                         <div class="section-title mb-0">
-                            <h2 class="title">Join with us</h2>
-                            <p>and stay up to date with the latest news and offers! </p>
+                            <h2 class="title">انضم إلينا</h2>
+                            <p>وتبقى على اطلاع بآخر الأخبار والعروض!</p>
                         </div>
                     </div>
                     <div class="newsletter-form">
                         <form action="{{ url("newsletter") }}" method="POST">
                             @csrf
-                            <input type="email" name="email" class="form-control" placeholder="enter your email">
+                            <input type="email" name="email" class="form-control" placeholder="أدخل بريدك الإلكتروني...">
                             <button class="btn-submit" type="submit"><i class="fa fa-paper-plane"></i></button>
                         </form>
                     </div>

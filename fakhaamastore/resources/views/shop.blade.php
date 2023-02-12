@@ -9,15 +9,15 @@
                     <div class="col-md-5">
                         <div class="page-header-st3-content text-center text-md-start">
                             <ol class="breadcrumb justify-content-center justify-content-md-start">
-                                <li class="breadcrumb-item"><a class="text-dark" href="{{ url('') }}">Home</a></li>
-                                <li class="breadcrumb-item active text-dark" aria-current="page">Products</li>
+                                <li class="breadcrumb-item"><a class="text-dark" href="{{ url('') }}">الرئيسية</a></li>
+                                <li class="breadcrumb-item active text-dark" aria-current="page">منتجات</li>
                             </ol>
-                            <h2 class="page-header-title">All Products</h2>
+                            <h2 class="page-header-title">جميع المنتجات</h2>
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <h5 class="showing-pagination-results mt-5 mt-md-9 text-center text-md-end">Showing
-                            {{ $products->count() }} Results from {{ $products->total() }}</h5>
+                        <h5 class="showing-pagination-results mt-5 mt-md-9 text-center text-md-start">عرض
+                            {{ $products->count() }} نتائج من {{ $products->total() }}</h5>
                     </div>
                 </div>
             </div>
@@ -37,9 +37,9 @@
                                         <!--== Start Product Item ==-->
                                         <div style="background-color: rgb(255, 243, 218);" class="p-2 rounded-3 product-item product-st3-item">
                                             <div class="product-thumb">
-                                                <span class="position-absolute text-warning fw-bold">Top Sale</span>
+                                                <span class="position-absolute text-warning fw-bold">أعلى المبيعات</span>
                                                 <a class="d-block" href="{{ url("product-details/".$product->product->id) }}">
-                                                    <img src="{{ $product->product->photo ? $product->product->photo : asset('assets/images/shop/1.webp') }}" width="370" height="450" alt="Image-HasTech">
+                                                    <img src="{{ $product->product->photo ? asset('storage/'.$product->product->photo) : asset('assets/images/shop/1.webp') }}" width="370" height="450" alt="Image-HasTech">
                                                 </a>
                                                 <a href="{{ url('shop?category=' . $product->product->category->id .'&search=' . $search .'&price-from=' . ($price[0] ? $price[0] : 0) .'&price-to=' . ($price[0] ? $price[1] : 100000),) }}"
                                                     class="flag-new">{{ $product->product->category->name }}</a>
@@ -49,7 +49,7 @@
                                                     </button> --}}
                                                     <a href="{{ url('product-details/' . $product->product->id) }}" type="button"
                                                         class="product-action-btn action-btn-cart">
-                                                        <span>Order now</span>
+                                                        <span>اطلب الان</span>
                                                     </a>
                                                     {{-- <button type="button" class="product-action-btn action-btn-wishlist" data-id="{{ $product->id }}" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
                                                         <i class="fa fa-heart-o"></i>
@@ -70,15 +70,15 @@
                                                         <i
                                                             class="fa fa-star{{ getRatingFromReviews($product->product->reviews) >= 5 ? '' : '-o' }}"></i>
                                                     </div>
-                                                    <div class="reviews">{{ count($product->product->reviews) }} reviews</div>
+                                                    <div class="reviews">{{ count($product->product->reviews) }} التقيمات</div>
                                                 </div>
                                                 <h4 class="title"><a href="product-details.html">{{ $product->product->name }}</a>
                                                 </h4>
                                                 <div class="prices">
                                                     <span
-                                                        class="price">{{ $product->product->actual_price }}{{ config('app')['currency_symbol'] }}</span>
+                                                        class="price d-inline-block">{{ $product->product->actual_price }} {{ config('app')['currency_symbol'] }}</span>
                                                     <span
-                                                        class="price-old">{{ $product->product->old_price }}{{ config('app')['currency_symbol'] }}</span>
+                                                        class="price-old d-inline-block">{{ $product->product->old_price }} {{ config('app')['currency_symbol'] }}</span>
                                                 </div>
                                             </div>
                                             <div class="product-action-bottom">
@@ -90,7 +90,7 @@
                                                 </button> --}}
                                                 <a href="{{ url('product-details/' . $product->product->id) }}" type="button"
                                                     class="product-action-btn action-btn-cart">
-                                                    <span>Order now</span>
+                                                    <span>اطلب الان</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -107,7 +107,7 @@
                                         <div class="product-item product-st3-item">
                                             <div class="product-thumb">
                                                 <a class="d-block" href="{{ url("product-details/$product->id") }}">
-                                                    <img src="{{ $product->photo ? $product->photo : asset('assets/images/shop/1.webp') }}"
+                                                    <img src="{{ $product->photo ? asset('storage/'.$product->photo) : asset('assets/images/shop/1.webp') }}"
                                                         width="370" height="450" alt="Image-HasTech">
                                                 </a>
                                                 <a href="{{ url(
@@ -124,7 +124,7 @@
                                             </button> --}}
                                                     <a href="{{ url('product-details/' . $product->id) }}" type="button"
                                                         class="product-action-btn action-btn-cart">
-                                                        <span>Order now</span>
+                                                        <span>اطلب الان</span>
                                                     </a>
                                                     {{-- <button type="button" class="product-action-btn action-btn-wishlist" data-id="{{ $product->id }}" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
                                                 <i class="fa fa-heart-o"></i>
@@ -145,15 +145,15 @@
                                                         <i
                                                             class="fa fa-star{{ getRatingFromReviews($product->reviews) >= 5 ? '' : '-o' }}"></i>
                                                     </div>
-                                                    <div class="reviews">{{ count($product->reviews) }} reviews</div>
+                                                    <div class="reviews">{{ count($product->reviews) }} التقيمات</div>
                                                 </div>
                                                 <h4 class="title"><a href="product-details.html">{{ $product->name }}</a>
                                                 </h4>
                                                 <div class="prices">
                                                     <span
-                                                        class="price">{{ $product->actual_price }}{{ config('app')['currency_symbol'] }}</span>
+                                                        class="price d-inline-block">{{ $product->actual_price }} {{ config('app')['currency_symbol'] }}</span>
                                                     <span
-                                                        class="price-old">{{ $product->old_price }}{{ config('app')['currency_symbol'] }}</span>
+                                                        class="price-old d-inline-block">{{ $product->old_price }} {{ config('app')['currency_symbol'] }}</span>
                                                 </div>
                                             </div>
                                             <div class="product-action-bottom">
@@ -165,7 +165,7 @@
                                         </button> --}}
                                                 <a href="{{ url('product-details/' . $product->id) }}" type="button"
                                                     class="product-action-btn action-btn-cart">
-                                                    <span>Order now</span>
+                                                    <span>اطلب الان</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -176,13 +176,15 @@
                                 <div class="rounded border col-12 mb-4 mb-sm-8 p-1">
                                     <div class="rounded bg-light p-3 text-center h1 text-secondary">
                                         <div class="col">
-                                            No product found!
+                                            <span>
+                                                لم يتم العثور على أي منتج!
+                                            </span>
                                         </div>
                                         <div class="col-auto">
                                             <a href="{{ url('/shop') }}"
-                                                style="width: fit-content !important;margin: auto;padding: 0.5rem .5rem !important;height: auto;font-size: .7rem;line-height: .7rem;letter-spacing: 2px;"
+                                                style="width: fit-content !important;margin: auto;padding: 0.5rem .5rem !important;height: auto;font-size: .7rem;line-height: .7rem;letter-spacing: 0px;"
                                                 class="btn shadow-sm btn-sm rounded p-1 mb-3 d-block w-100 "><i
-                                                    class="fa fa-close"> Clear filters</i></a>
+                                                    class="fa fa-close"></i> مسح الفلاتر</a>
                                         </div>
                                     </div>
                                 </div>
@@ -194,12 +196,12 @@
                     </div>
                     <div class="col-xl-3">
                         <a href="{{ url('/shop') }}" class="btn shadow-sm btn-sm rounded p-1 mb-3 d-block w-100 "><i
-                                class="fa fa-close"> Clear filters</i></a>
+                                class="fa fa-close"></i> مسح الفلاتر</a>
                         <div class="product-sidebar-widget">
                             <div class="product-widget-search">
                                 <form action="{{ url('shop') }}">
                                     <input type="search" value="{{ $search }}" name="search"
-                                        placeholder="Search Here">
+                                        placeholder="ابحث هنا">
                                     <input type="text" name="category" value="{{ $category }}" hidden>
                                     <input hidden name="price-from" placeholder="From...(0)"
                                         value="{{ @$price[0] ? $price[0] : 0 }}" class="form-control mb-1"
@@ -211,13 +213,13 @@
                                 </form>
                             </div>
                             <div class="product-widget">
-                                <h4 class="product-widget-title">Price Filter</h4>
+                                <h4 class="product-widget-title">فلتر السعر</h4>
                                 <div class="product-widget-range-slider">
                                     <div class="slider-range" id="slider-range"></div>
                                     <div class="slider-labels">
                                         <form action="{{ url('shop') }}" method="get">
                                             <input type="search" value="{{ $search }}" hidden name="search"
-                                                placeholder="Search Here">
+                                                placeholder="ابحث هنا">
                                             <input type="text" name="category" value="{{ $category }}" hidden>
                                             <input min="0" max="99999" name="price-from"
                                                 placeholder="From...(0)" value="{{ @$price[0] ? $price[0] : 0 }}"
@@ -226,18 +228,16 @@
                                                 value="{{ @$price[1] ? $price[1] : 100000 }}" class="form-control mb-1"
                                                 type="number" />
                                             <button class="w-100 btn btn-primary rounded p-1"
-                                                type="submit">Apply</button>
+                                                type="submit">تطبيق</button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                             <div class="product-widget">
-                                <h4 class="product-widget-title">Categoris</h4>
+                                <h4 class="product-widget-title">الفئات</h4>
                                 <ul class="product-widget-category">
                                     @foreach ($categories as $category)
-                                        <li><a
-                                                href="{{ url('shop?category=' . $category->id . '&search=' . $search . '&price-from=' . ($price[0] ? $price[0] : 0) . '&price-to=' . ($price[1] ? $price[1] : 100000)) }}">{{ $category->name }}
-                                                <span>({{ count($category->products) }})</span></a></li>
+                                        <li><a href="{{ url('shop?category=' . $category->id . '&search=' . $search . '&price-from=' . ($price[0] ? $price[0] : 0) . '&price-to=' . ($price[1] ? $price[1] : 100000)) }}">{{ $category->name }} <span>({{ count($category->products) }})</span></a></li>
                                     @endforeach
                                 </ul>
                             </div>
