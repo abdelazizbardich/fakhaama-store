@@ -16,6 +16,17 @@
             <div class="row vh-100">
                 <div class="col-md-6 m-auto border p-3 px-5 bg-white rounded shadow">
                     <h1 class="display-3 fw-bold text-center mb-5">Login</h1>
+                    @if ($errors->any())
+                                <div class="col-12">
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li class="mb-0">{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            @endif
                     <form action="{{url('login')}}" method="POST">
                         @csrf
                         <!-- Email input -->

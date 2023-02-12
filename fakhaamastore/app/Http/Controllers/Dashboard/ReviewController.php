@@ -5,11 +5,9 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ReviewController extends Controller
 {
-
-
-    public function index(Request $request){
-        return view("dashboard.home");
+    public function index(){
+        return view("dashboard.reviews");
     }
 }

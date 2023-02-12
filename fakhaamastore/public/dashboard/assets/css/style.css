@@ -1,0 +1,32 @@
+body {
+  background-color: #f8f2ff;
+  color: #202020;
+  font-family: "Montserrat", "Helvetica", "Open Sans", "Arial";
+  font-size: 13px;
+  transition: .3s;
+}
+a{
+    text-decoration: none;
+}
+.header{
+    height: 70px;
+    width: 100%;
+}
+
+
+.aside{
+    height: calc(100vh - 70px);
+}
+.aside a{
+    color: inherit;
+}
+.aside li{
+    cursor: pointer;
+}
+.aside li:hover{
+    background-color: #eee;
+}
+.aside i{
+    font-size: 1.3rem;
+    margin-left: .5rem;
+}

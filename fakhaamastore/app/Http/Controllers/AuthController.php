@@ -31,13 +31,18 @@ class AuthController extends Controller
         if(password_verify($request->password,$user->password)){
             if($request->remember_me === "on"){
                 $cookie = cookie('user_id', $user->id, 43800 /* 1 month */);
-                return redirect('dashboard')->cookie($cookie);
+                return redirect('admin')->cookie($cookie);
             }else{
                 $request->session()->put('user_id', $user->id);
-                return redirect('dashboard');
+                return redirect('admin');
             }
         }else{
             return redirect('login')->withErrors(["unautorized"=>"Wrong credentials!"])->withInput($request->input);
         }
+    }
+
+
+    public function logout(){
+        Cookie::queue(Cookie::forget('user_id'));
     }
 }

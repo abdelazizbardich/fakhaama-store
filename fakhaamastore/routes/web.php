@@ -39,4 +39,17 @@ Route::post("/login",[App\Http\Controllers\AuthController::class,'login']);
 Route::get("/forgot-password",[App\Http\Controllers\AuthController::class,'getForgotPassword']);
 Route::get("/reset-password",[App\Http\Controllers\AuthController::class,'getResetPassword']);
 
-Route::get("/dashboard",[App\Http\Controllers\Dashboard\HomeController::class,'index']);
+Route::get("/admin",[App\Http\Controllers\Dashboard\HomeController::class,'index']);
+
+Route::get("admin/products",[App\Http\Controllers\Dashboard\ProductController::class,'index']);
+Route::get("admin/products/add",[App\Http\Controllers\Dashboard\ProductController::class,'create']);
+Route::post("admin/products/add",[App\Http\Controllers\Dashboard\ProductController::class,'save']);
+
+Route::get("admin/categories",[App\Http\Controllers\Dashboard\CategoryController::class,'index']);
+Route::get("admin/categories/add",[App\Http\Controllers\Dashboard\CategoryController::class,'create']);
+Route::post("admin/categories/add",[App\Http\Controllers\Dashboard\CategoryController::class,'save']);
+Route::get("admin/orders",[App\Http\Controllers\Dashboard\OrderController::class,'index']);
+Route::get("admin/users",[App\Http\Controllers\Dashboard\UserController::class,'index']);
+Route::get("admin/reviews",[App\Http\Controllers\Dashboard\ReviewController::class,'index']);
+Route::get("admin/newsletter",[App\Http\Controllers\Dashboard\NewsletterController::class,'index']);
+Route::get("admin/logout",[App\Http\Controllers\Dashboard\AuthController::class,'logout']);
