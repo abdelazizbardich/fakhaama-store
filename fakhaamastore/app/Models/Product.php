@@ -43,6 +43,7 @@ class Product extends Model
     protected $fillable = [
         "name",
         "category_id",
+        "slider_photo",
         "old_price",
         "actual_price",
         "weight",
@@ -54,6 +55,7 @@ class Product extends Model
         "gallery",
         "short_description",
         "description",
+        "other_infos"
     ];
 
 

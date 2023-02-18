@@ -37,9 +37,8 @@
                         <form action="{{ url('product-checkout/'.$product->id) }}" method="get">
                             <div class="product-details-content">
                                 {{-- <h5 class="product-details-collection">Premioum collection</h5> --}}
-                                <h3 class="product-details-title">{{ $product->name }}</h3>
                                 <div class="product-details-review">
-                                    <div class="product-review-icon">
+                                    <div class="product-review-icon m-0">
                                         <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 1)?'':'-o' }}"></i>
                                         <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 2)?'':'-o' }}"></i>
                                         <i class="fa fa-star{{ (getRatingFromReviews($product->reviews) >= 3)?'':'-o' }}"></i>
@@ -48,6 +47,7 @@
                                     </div>
                                     <button type="button" class="product-review-show me-2">{{ $product->reviews->count() }} التقيمات</button>
                                 </div>
+                                <h3 class="h2 fw-bold">{{ $product->name }}</h3>
                                 {{-- <div class="product-details-qty-list">
                                     <div class="qty-list-check">
                                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="qtyList1" checked>
@@ -59,11 +59,6 @@
                                         <label class="form-check-label" for="qtyList2">25 ml bottol <b>$350.00</b> <span class="extra-offer">extra 25%</span></label>
                                     </div>
                                 </div> --}}
-                                <div class="product-details-pro-qty my-5">
-                                    <div class="pro-qty">
-                                        <input type="text" name="quantity" title="Quantity" value="01">
-                                    </div>
-                                </div>
                                 <div class="product-details-shipping-cost">
                                     <p>
                                         {{ $product->short_description}}
@@ -71,15 +66,20 @@
                                     {{-- <input class="form-check-input" type="checkbox" value="" checked>
                                     <label class="form-check-label" for="ShippingCost">Shipping from USA, Shipping Fees $4.22</label> --}}
                                 </div>
+                                <hr>
                                 <div class="product-details-action mb-3">
                                     <span class="ms-3 text-danger fw-bold display-4">{{ $product->actual_price}} {{config('app')['currency_symbol']}}</span>
                                     <span class="text-decoration-line-through small">{{ $product->old_price }} {{config('app')['currency_symbol']}}</span>
                                 </div>
-                                <hr>
+                                <div class="product-details-pro-qty border-0 my-1">
+                                    <div class="pro-qty">
+                                        <input type="text" name="quantity" title="Quantity" value="01">
+                                    </div>
+                                </div>
                                 <div class="d-flex mt-3">
                                     {{-- <button type="button" class="btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal"><i class="fa fa-heart-o"></i></button> --}}
-                                    <button type="submit" class="btn ms-3" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">اطلب الان</button>
-                                    <a href="{{"https://api.whatsapp.com/send?phone=".config('app.whatsupp_number')."&text=".urlencode('مرحبًا ، أود أن أطلب هذا المنتج:'.$product->name.', هل مازال متوفرا؟ '.url('/product-details/'.$product->id))}}" target="_blank" class="btn shadow btn-lg bg-success border-success d-flex align-items-center justify-content-between">اطلب عبر<i class="ms-3 fs-3 fa fa-whatsapp"></i> </a>
+                                    <button type="submit" class="btn ms-3 w-50 " data-bs-toggle="modal" data-bs-target="#action-CartAddModal">اطلب الان</button>
+                                    <a href="{{"https://api.whatsapp.com/send?phone=".config('app.whatsupp_number')."&text=".urlencode('مرحبًا ، أود أن أطلب هذا المنتج:'.$product->name.', هل مازال متوفرا؟ '.url('/product-details/'.$product->id))}}" target="_blank" class="w-50 btn shadow btn-lg bg-success border-success d-flex align-items-center justify-content-center">اطلب عبر<i class="me-1 fs-3 fa fa-whatsapp"></i> </a>
                                 </div>
                             </div>
                         </form>
@@ -88,11 +88,11 @@
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="nav product-details-nav" id="product-details-nav-tab" role="tablist">
-                            <button class="nav-link ms-5 active" id="specification-tab" data-bs-toggle="tab" data-bs-target="#specification" type="button" role="tab" aria-controls="specification" aria-selected="true">مواصفات</button>
-                            <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">التقيمات</button>
+                            <button class="btn btn-primary ms-5" id="specification-tab" data-bs-toggle="tab" data-bs-target="#specification" type="button" role="tab" aria-controls="specification" aria-selected="false">مواصفات</button>
+                            <button class="btn btn-primary active" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="true">التقيمات</button>
                         </div>
                         <div class="tab-content" id="product-details-nav-tabContent">
-                            <div class="tab-pane fade show active" id="specification" role="tabpanel" aria-labelledby="specification-tab">
+                            <div class="tab-pane fade " id="specification" role="tabpanel" aria-labelledby="specification-tab">
                                 <ul class="product-details-info-wrap">
                                     <li><span>الوزن:</span>
                                         <p>{{ $product->weight }} g</p>
@@ -114,7 +114,7 @@
                                 </p>
                             </div>
 
-                            <div class="tab-pane" id="review" role="tabpanel" aria-labelledby="review-tab">
+                            <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
                                 @foreach ($product->reviews as $review)
                                     <!--== Start Reviews Content Item ==-->
                                     <div class="product-review-item">

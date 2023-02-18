@@ -39,17 +39,23 @@ Route::post("/login",[App\Http\Controllers\AuthController::class,'login']);
 Route::get("/forgot-password",[App\Http\Controllers\AuthController::class,'getForgotPassword']);
 Route::get("/reset-password",[App\Http\Controllers\AuthController::class,'getResetPassword']);
 
-Route::get("/admin",[App\Http\Controllers\Dashboard\HomeController::class,'index']);
 
-Route::get("admin/products",[App\Http\Controllers\Dashboard\ProductController::class,'index']);
-Route::get("admin/products/add",[App\Http\Controllers\Dashboard\ProductController::class,'create']);
-Route::post("admin/products/add",[App\Http\Controllers\Dashboard\ProductController::class,'save']);
+Route::prefix("/admin")->middleware(['auth'])->group(function () {
+    Route::get("/",[App\Http\Controllers\Dashboard\HomeController::class,'index']);
 
-Route::get("admin/categories",[App\Http\Controllers\Dashboard\CategoryController::class,'index']);
-Route::get("admin/categories/add",[App\Http\Controllers\Dashboard\CategoryController::class,'create']);
-Route::post("admin/categories/add",[App\Http\Controllers\Dashboard\CategoryController::class,'save']);
-Route::get("admin/orders",[App\Http\Controllers\Dashboard\OrderController::class,'index']);
-Route::get("admin/users",[App\Http\Controllers\Dashboard\UserController::class,'index']);
-Route::get("admin/reviews",[App\Http\Controllers\Dashboard\ReviewController::class,'index']);
-Route::get("admin/newsletter",[App\Http\Controllers\Dashboard\NewsletterController::class,'index']);
-Route::get("admin/logout",[App\Http\Controllers\Dashboard\AuthController::class,'logout']);
+    Route::get("/products",[App\Http\Controllers\Dashboard\ProductController::class,'index']);
+    Route::get("/products/add",[App\Http\Controllers\Dashboard\ProductController::class,'create']);
+    Route::post("/products/add",[App\Http\Controllers\Dashboard\ProductController::class,'save']);
+    Route::get("/products/edit/{product:id}",[App\Http\Controllers\Dashboard\ProductController::class,'edit']);
+    Route::post("/products/edit/{product:id}",[App\Http\Controllers\Dashboard\ProductController::class,'update']);
+
+    Route::get("/categories",[App\Http\Controllers\Dashboard\CategoryController::class,'index']);
+    Route::get("/categories/add",[App\Http\Controllers\Dashboard\CategoryController::class,'create']);
+    Route::post("/categories/add",[App\Http\Controllers\Dashboard\CategoryController::class,'save']);
+    Route::get("/orders",[App\Http\Controllers\Dashboard\OrderController::class,'index']);
+    Route::get("/users",[App\Http\Controllers\Dashboard\UserController::class,'index']);
+    Route::get("/reviews",[App\Http\Controllers\Dashboard\ReviewController::class,'index']);
+    Route::get("/newsletter",[App\Http\Controllers\Dashboard\NewsletterController::class,'index']);
+    Route::get("/logout",[App\Http\Controllers\Dashboard\AuthController::class,'logout']);
+});
+

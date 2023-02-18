@@ -1650,7 +1650,7 @@ hr {
   text-align: right !important;
 }
 .nice-select .current {
-  margin-right: 1rem;
+  margin-left: 1rem;
 }
 .nice-select .option {
   font-size: 14px;

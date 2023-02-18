@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="hero-two-slide-thumb">
-                                            <img src="{{asset('storage/'.$sliderElement->photo)}}" width="690" height="690"
+                                            <img src="{{asset('storage/'.$sliderElement->slider_photo)}}" width="690" height="690"
                                                 alt="Image">
                                         </div>
                                     </div>

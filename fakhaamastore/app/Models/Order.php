@@ -30,6 +30,39 @@ class Order extends Model
     }
 
 
+    public function products()
+    {
+        return $this->hasManyThrough(
+            Product::class,
+            OrderItem::class,
+            'order_id', // Foreign key on the environments table...
+            'id', // Local key on the projects table...
+            'id', // Local key on the environments table...
+            'product_id', // Foreign key on the deployments table...
+        );
+    }
+
+    /**
+     * Get the user associated with the Order
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
+
+    /**
+     * Get the address associated with the Order
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function address()
+    {
+        return $this->hasOne(Address::class, 'id', 'address_id');
+    }
+
+
     protected static function boot()
     {
         parent::boot();

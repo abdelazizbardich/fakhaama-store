@@ -1,32 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
 body {
+  /* font-family: "Inter", sans-serif, Arial, Helvetica, sans-serif; */
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.75;
+  position: relative;
+  visibility: visible;
+  overflow-x: hidden;
   background-color: #f8f2ff;
   color: #202020;
-  font-family: "Montserrat", "Helvetica", "Open Sans", "Arial";
-  font-size: 13px;
-  transition: .3s;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-.header{
-    height: 70px;
-    width: 100%;
+.header {
+  height: 70px;
+  width: 100%;
 }
 
-
-.aside{
-    height: calc(100vh - 70px);
+.aside {
+  height: calc(100vh - 70px);
 }
-.aside a{
-    color: inherit;
+.aside a {
+  color: inherit;
 }
-.aside li{
-    cursor: pointer;
+.aside li {
+  cursor: pointer;
 }
-.aside li:hover{
-    background-color: #eee;
+.aside li:hover {
+  background-color: #eee;
 }
-.aside i{
-    font-size: 1.3rem;
-    margin-left: .5rem;
+.aside i {
+  font-size: 1.3rem;
+  margin-left: 0.5rem;
 }

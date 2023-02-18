@@ -20,6 +20,7 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->text('photo')->nullable();
             $table->json('gallery')->nullable();
+            $table->text('slider_photo')->nullable();
             $table->decimal('old_price', 10, 2)->nullable();
             $table->decimal('actual_price', 10, 2)->nullable();
             $table->float('weight')->nullable();
