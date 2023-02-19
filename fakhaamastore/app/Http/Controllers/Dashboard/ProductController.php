@@ -163,4 +163,9 @@ class ProductController extends Controller
         $product->save();
         return redirect('/admin/products/edit/'.$product->id);
     }
+
+    public function delete(Product $product){
+        $photo->delete();
+        return redirect('/admin/products');
+    }
 }
