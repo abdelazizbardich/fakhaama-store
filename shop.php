@@ -67,7 +67,7 @@
                 <div class="row align-items-center">
                     <div class="col-auto">
                         <div class="header-logo">
-                            <a href="home.html">
+                            <a href="home.php">
                                 <img class="logo-main" src="./assets/images/logo.png" width="95" height="68"
                                     alt="Logo" />
                             </a>
@@ -76,9 +76,9 @@
                     <div class="col d-lg-block">
                         <div class="header-navigation">
                             <ul class="main-nav justify-content-end">
-                                <li><a href="home.html">الرئيسية</a></li>
-                                <li><a href="shop.html">المتجر</a></li>
-                                <li><a href="contact.html">تواصل معنا</a></li>
+                                <li><a href="home.php">الرئيسية</a></li>
+                                <li><a href="shop.php">المتجر</a></li>
+                                <li><a href="contact.php">تواصل معنا</a></li>
                             </ul>
                         </div>
                     </div>
@@ -103,97 +103,79 @@
         <main class="main-content">
 
             <!--== Start Page Header Area Wrapper ==-->
-            <section class="page-header-area pt-10 pb-9">
+            <section class="page-header-area pt-10 pb-9" data-bg-color="#FFF3DA">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
-                            <h1>
-                                سياسة الخصوصية لـ fakhaama.store
-                            </h1>
-                            <span class="d-block mb-5">
-                                آخر تحديث: 10/02/2023
-                            </span>
-                            <p>
-                                في fakhaama store ، نحن ملتزمون بحماية خصوصية عملائنا. هذه الخصوصية
-                                تحدد السياسة ممارساتنا لجمع المعلومات الشخصية واستخدامها والكشف عنها من خلال
-                                موقعنا الإلكتروني fakhaama store. باستخدام موقعنا ، فإنك توافق على شروط هذه
-                                الخصوصية
-                                سياسة.
-                            </p>
-                            <h5>
-                                جمع المعلومات الشخصية
-                            </h5>
-                            <p>
-                                قد نقوم بجمع معلومات شخصية عند زيارة موقعنا على الإنترنت ، أو تقديم طلب ، أو الاشتراك في
-                                موقعنا
-                                النشرة الإخبارية ، أو المشاركة في العروض الترويجية أو الاستطلاعات. قد تتضمن المعلومات
-                                الشخصية
-                                اسمك ،
-                                عنوان البريد الإلكتروني والعنوان البريدي ورقم الهاتف ومعلومات الدفع وغيرها من المعلومات
-                                التي
-                                يمكن
-                                تستخدم للتعرف عليك.
-                            </p>
-                            <h5>
-                                استخدام المعلومات الشخصية
-                            </h5>
-                            <p>
-                                نستخدم المعلومات الشخصية لتزويدك بالخدمات التي تطلبها ومعالجتها
-                                المعاملات ، للتواصل معك ، لتحسين موقعنا ومنتجاتنا ، ولتقديم لك
-                                الترقيات والاستطلاعات. يجوز لنا أيضًا استخدام المعلومات الشخصية لأغراض داخلية ، مثل
-                                المراجعة وتحليل البيانات.
-                            </p>
-                            <h5>
-                                إفشاء المعلومات الشخصية
-                            </h5>
-                            <p>
-                                نحن لا نبيع أو نؤجر أو نتاجر بمعلوماتك الشخصية لأطراف ثالثة لتسويقها
-                                المقاصد. قد نشارك معلوماتك الشخصية مع مزودي الخدمة الخارجيين الذين يساعدون
-                                لنا من خلال موقعنا على الويب ومعالجة الدفع والخدمات الأخرى. يخضع مقدمو الخدمة هؤلاء
-                                لاتفاقيات السرية ويسمح فقط باستخدام معلوماتك الشخصية لـ
-                                الغرض من تقديم الخدمات لنا.
-                            </p>
-                            <p>
-                                قد نكشف أيضًا عن معلوماتك الشخصية استجابةً لإجراءات قانونية ، مثل المحكمة
-                                أمر أو أمر استدعاء ، أو الامتثال للقوانين المعمول بها.
-                            </p>
-                            <h5>
-                                أمن المعلومات الشخصية
-                            </h5>
-                            <p>
-                                نحن نستخدم تدابير معقولة لحماية المعلومات الشخصية من الوصول غير المصرح به أو الاستخدام
-                                أو
-                                إفشاء. ومع ذلك ، لا توجد إجراءات أمنية يمكن أن تضمن الأمن الكامل للشخصية
-                                المعلومات ، ولا يمكننا أن نكون مسؤولين عن الوصول غير المصرح به إلى معلوماتك الشخصية.
-                            </p>
-                            <h5>
-                                الوصول إلى المعلومات الشخصية وتحديثها
-                            </h5>
-                            <p>يمكنك الوصول إلى معلوماتك الشخصية وتحديثها عن طريق تسجيل الدخول إلى حسابك على موقعنا.
-                                إذا كنت بحاجة إلى مساعدة في الوصول إلى معلوماتك الشخصية أو تحديثها ، فيرجى الاتصال بنا
-                                في <a href="mailto:contact@fakhaama.store" class="text-primary">contact@fakhaama.store</a>.
-                            </p>
-                            <h5>
-                                التغييرات في سياسة الخصوصية
-                            </h5>
-                            <p>
-                                قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر لتعكس التغييرات في ممارساتنا أو
-                                القوانين المعمول بها. سيتم نشر أحدث إصدار من سياسة الخصوصية على موقعنا الإلكتروني وأنت
-                                يجب مراجعة سياسة الخصوصية بانتظام للتأكد من أنك على علم بما لدينا
-                                الممارسات.
-                            </p>
-                            <h5>
-                                اتصل بنا
-                            </h5>
-                            <p>
-                                إذا كانت لديك أي أسئلة أو مخاوف بشأن سياسة الخصوصية أو ممارساتنا ، فيرجى الاتصال
-                                لنا في <a href="mailto:contact@fakhaama.store" class="text-primary">contact@fakhaama.store</a>
-                            </p>
+                        <div class="col-md-5">
+                            <div class="page-header-st3-content text-center text-md-start">
+                                <ol class="breadcrumb justify-content-center justify-content-md-start">
+                                    <li class="breadcrumb-item"><a class="text-dark" href="home.php">الرئيسية</a></li>
+                                    <li class="breadcrumb-item active text-dark" aria-current="page">منتجات</li>
+                                </ol>
+                                <h2 class="page-header-title">جميع المنتجات</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h5 class="showing-pagination-results mt-5 mt-md-9 text-center text-md-start">عرض
+                                50 نتائج من 16</h5>
                         </div>
                     </div>
                 </div>
             </section>
+            <section class="section-space">
+                <div class="container">
+                    <div class="row justify-content-between flex-xl-row-reverse">
+                        <div class="col-12">
+                            <div class="row g-3 g-sm-6">
+                                <div class="col-12 col-lg-4 mb-4 mb-sm-9 col-mb-4 col-sm-6">
+                                    <!--== Start Product Item ==-->
+                                    <div class="product-item product-st2-item">
+                                        <div class="product-thumb">
+                                            <a class="d-block" href="product-details.php">
+                                                <img src="./assets/images/products/fakhama-pack.jpg" width="370"
+                                                    height="450" alt="Image-HasTech">
+                                            </a>
+                                            <span class="flag-new">للسيدات</span>
+                                        </div>
+                                        <div class="product-info">
+                                            <h4 class="title fw-bold"><a href="product-details.php">مجموعة عطور الفخامة</a>
+                                            </h4>
+                                            <p class="small">
+                                                عطور فاخرة مناسبة للأمسيات الخاصة والمناسبات الراقية. تمنح هذه العطور اللإنطباع الأول المميز واللافت للنظر، وتستمر بإثارة الإعجاب لمن حولك طوال الليوم.
+                                            </p>
+                                            <div class="">
+                                                <span class="d-inline-block h2 mb-3 fw-bold  text-danger">299 دم</span>
+                                            </div>
+                                            <div class="product-action">
+                                                <a href="product-details.php" type="button"
+                                                    class="product-action-btn action-btn-cart">
+                                                    <span>أطلب الآن</span>
+                                                </a>
+                                            </div>
+                                            <div class="product-action-bottom">
+                                                <a href="product-details.php" type="button"
+                                                    class="product-action-btn action-btn-cart">
+                                                    <span>أطلب الآن</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--== End prPduct Item ==-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-space pt-0">
+                <div class="container">
+                    <a href="shop.php" class="product-banner-item">
+                        <img src="assets/images/shop/banner/7.webp" width="1170" height="240" alt="Image-HasTech">
+                    </a>
+                </div>
+            </section>
         </main>
+
 
 
         <!--== Start Footer Area Wrapper ==-->
@@ -205,7 +187,7 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="widget-item">
                                 <div class="widget-about">
-                                    <a class="widget-logo" href="home.html">
+                                    <a class="widget-logo" href="home.php">
                                         <img src="./assets/images/logo.png" width="95" height="68" alt="Logo">
                                     </a>
                                     <p class="desc">
@@ -218,10 +200,10 @@
                             <div class="widget-item">
                                 <h4 class="widget-title">معلومات</h4>
                                 <ul class="widget-nav">
-                                    
-                                    <li><a href="contact.html">تواصل معنا</a></li>
-                                    <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
-                                    <li><a href="shop.html">المتجر</a></li>
+
+                                    <li><a href="contact.php">تواصل معنا</a></li>
+                                    <li><a href="privacy-policy.php">سياسة الخصوصية</a></li>
+                                    <li><a href="shop.php">المتجر</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -262,10 +244,10 @@
             <div class="offcanvas-body">
                 <div id="offcanvasNav" class="offcanvas-menu-nav">
                     <ul>
-                        
-                        <li><a href="contact.html">تواصل معنا</a></li>
-                        <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
-                        <li><a href="shop.html">المتجر</a></li>
+
+                        <li><a href="contact.php">تواصل معنا</a></li>
+                        <li><a href="privacy-policy.php">سياسة الخصوصية</a></li>
+                        <li><a href="shop.php">المتجر</a></li>
                     </ul>
                 </div>
             </div>

@@ -67,7 +67,7 @@
                 <div class="row align-items-center">
                     <div class="col-auto">
                         <div class="header-logo">
-                            <a href="home.html">
+                            <a href="home.php">
                                 <img class="logo-main" src="./assets/images/logo.png" width="95" height="68"
                                     alt="Logo" />
                             </a>
@@ -76,9 +76,9 @@
                     <div class="col d-lg-block">
                         <div class="header-navigation">
                             <ul class="main-nav justify-content-end">
-                                <li><a href="home.html">الرئيسية</a></li>
-                                <li><a href="shop.html">المتجر</a></li>
-                                <li><a href="contact.html">تواصل معنا</a></li>
+                                <li><a href="home.php">الرئيسية</a></li>
+                                <li><a href="shop.php">المتجر</a></li>
+                                <li><a href="contact.php">تواصل معنا</a></li>
                             </ul>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                                                 عطور فاخرة مناسبة للأمسيات الخاصة والمناسبات الراقية. تمنح هذه العطور اللإنطباع الأول المميز واللافت للنظر، وتستمر بإثارة الإعجاب لمن حولك طوال الليوم.
                                             </p>
                                             <div class="hero-two-slide-meta">
-                                                <a class="btn btn-border-primary" href="product-details.html">اطلب
+                                                <a class="btn btn-border-primary" href="product-details.php">اطلب
                                                     الان</a>
                                             </div>
                                         </div>
@@ -151,7 +151,7 @@
                         <!-- @foreach ($categories as $category) -->
                         <div class="col-sm-12 mb-3 col-md-4">
                             <!--== Start Product Category Item ==-->
-                            <a href="shop.html" class="product-banner-item">
+                            <a href="shop.php" class="product-banner-item">
                                 <img src="./assets/images/categories/for women.jpg" width="370" height="370"
                                     alt="Image-HasTech">
                                 <span
@@ -162,7 +162,7 @@
                         </div>
                         <div class="col-sm-12 mb-3 col-md-4">
                             <!--== Start Product Category Item ==-->
-                            <a href="shop.html" class="product-banner-item">
+                            <a href="shop.php" class="product-banner-item">
                                 <img src="./assets/images/categories/for kids.jpg" width="370" height="370"
                                     alt="Image-HasTech">
                                 <span
@@ -173,7 +173,7 @@
                         </div>
                         <div class="col-sm-12 mb-3 col-md-4">
                             <!--== Start Product Category Item ==-->
-                            <a href="shop.html" class="product-banner-item">
+                            <a href="shop.php" class="product-banner-item">
                                 <img src="./assets/images/categories/for man.jpg" width="370" height="370"
                                     alt="Image-HasTech">
                                 <span
@@ -199,7 +199,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <a href="shop.html" class="btn btn-primary"><span
+                            <a href="shop.php" class="btn btn-primary"><span
                                     class="d-none d-md-inline-block">عرض</span> المزيد <i class="fa fa-plus"></i></a>
                         </div>
                     </div>
@@ -209,14 +209,14 @@
                             <!--== Start Product Item ==-->
                             <div class="product-item product-st2-item">
                                 <div class="product-thumb">
-                                    <a class="d-block" href="product-details.html">
+                                    <a class="d-block" href="product-details.php">
                                         <img src="./assets/images/products/fakhama-pack.jpg" width="370"
                                             height="450" alt="Image-HasTech">
                                     </a>
                                     <span class="flag-new">للسيدات</span>
                                 </div>
                                 <div class="product-info">
-                                    <h4 class="title fw-bold"><a href="product-details.html">مجموعة عطور الفخامة</a>
+                                    <h4 class="title fw-bold"><a href="product-details.php">مجموعة عطور الفخامة</a>
                                     </h4>
                                     <p class="small">
                                         عطور فاخرة مناسبة للأمسيات الخاصة والمناسبات الراقية. تمنح هذه العطور اللإنطباع الأول المميز واللافت للنظر، وتستمر بإثارة الإعجاب لمن حولك طوال الليوم.
@@ -225,13 +225,13 @@
                                         <span class="d-inline-block h2 mb-3 fw-bold  text-danger">299 دم</span>
                                     </div>
                                     <div class="product-action">
-                                        <a href="product-details.html" type="button"
+                                        <a href="product-details.php" type="button"
                                             class="product-action-btn action-btn-cart">
                                             <span>أطلب الآن</span>
                                         </a>
                                     </div>
                                     <div class="product-action-bottom">
-                                        <a href="product-details.html" type="button"
+                                        <a href="product-details.php" type="button"
                                             class="product-action-btn action-btn-cart">
                                             <span>أطلب الآن</span>
                                         </a>
@@ -250,7 +250,7 @@
             <section class="section-space pt-0">
                 <div class="container">
                     <!--== Start Product Category Item ==-->
-                    <a href="shop.html" class="product-banner-item">
+                    <a href="shop.php" class="product-banner-item">
                         <img src="assets/images/shop/banner/7.webp" width="1170" height="240" alt="Image-HasTech">
                     </a>
                     <!--== End Product Category Item ==-->
@@ -269,7 +269,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <a href="shop.html" class="btn btn-primary"><span
+                            <a href="shop.php" class="btn btn-primary"><span
                                     class="d-none d-md-inline-block">عرض</span> المزيد <i class="fa fa-plus"></i></a>
                         </div>
                     </div>
@@ -279,14 +279,14 @@
                             <!--== Start Product Item ==-->
                             <div class="product-item product-st2-item">
                                 <div class="product-thumb">
-                                    <a class="d-block" href="product-details.html">
+                                    <a class="d-block" href="product-details.php">
                                         <img src="./assets/images/products/fakhama-pack.jpg" width="370"
                                             height="450" alt="Image-HasTech">
                                     </a>
                                     <span class="flag-new">للسيدات</span>
                                 </div>
                                 <div class="product-info">
-                                    <h4 class="title fw-bold"><a href="product-details.html">مجموعة عطور الفخامة</a>
+                                    <h4 class="title fw-bold"><a href="product-details.php">مجموعة عطور الفخامة</a>
                                     </h4>
                                     <p class="small">
                                         عطور فاخرة مناسبة للأمسيات الخاصة والمناسبات الراقية. تمنح هذه العطور اللإنطباع الأول المميز واللافت للنظر، وتستمر بإثارة الإعجاب لمن حولك طوال الليوم.
@@ -295,13 +295,13 @@
                                         <span class="d-inline-block h2 mb-3 fw-bold  text-danger">299 دم</span>
                                     </div>
                                     <div class="product-action">
-                                        <a href="product-details.html" type="button"
+                                        <a href="product-details.php" type="button"
                                             class="product-action-btn action-btn-cart">
                                             <span>أطلب الآن</span>
                                         </a>
                                     </div>
                                     <div class="product-action-bottom">
-                                        <a href="product-details.html" type="button"
+                                        <a href="product-details.php" type="button"
                                             class="product-action-btn action-btn-cart">
                                             <span>أطلب الآن</span>
                                         </a>
@@ -327,7 +327,7 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="widget-item">
                                 <div class="widget-about">
-                                    <a class="widget-logo" href="home.html">
+                                    <a class="widget-logo" href="home.php">
                                         <img src="./assets/images/logo.png" width="95" height="68" alt="Logo">
                                     </a>
                                     <p class="desc">
@@ -341,9 +341,9 @@
                                 <h4 class="widget-title">معلومات</h4>
                                 <ul class="widget-nav">
                                     
-                                    <li><a href="contact.html">تواصل معنا</a></li>
-                                    <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
-                                    <li><a href="shop.html">المتجر</a></li>
+                                    <li><a href="contact.php">تواصل معنا</a></li>
+                                    <li><a href="privacy-policy.php">سياسة الخصوصية</a></li>
+                                    <li><a href="shop.php">المتجر</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -385,9 +385,9 @@
                 <div id="offcanvasNav" class="offcanvas-menu-nav">
                     <ul>
                         
-                        <li><a href="contact.html">تواصل معنا</a></li>
-                        <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
-                        <li><a href="shop.html">المتجر</a></li>
+                        <li><a href="contact.php">تواصل معنا</a></li>
+                        <li><a href="privacy-policy.php">سياسة الخصوصية</a></li>
+                        <li><a href="shop.php">المتجر</a></li>
                     </ul>
                 </div>
             </div>

@@ -67,7 +67,7 @@
                 <div class="row align-items-center">
                     <div class="col-auto">
                         <div class="header-logo">
-                            <a href="home.html">
+                            <a href="home.php">
                                 <img class="logo-main" src="./assets/images/logo.png" width="95" height="68"
                                     alt="Logo" />
                             </a>
@@ -76,9 +76,9 @@
                     <div class="col d-lg-block">
                         <div class="header-navigation">
                             <ul class="main-nav justify-content-end">
-                                <li><a href="home.html">الرئيسية</a></li>
-                                <li><a href="shop.html">المتجر</a></li>
-                                <li><a href="contact.html">تواصل معنا</a></li>
+                                <li><a href="home.php">الرئيسية</a></li>
+                                <li><a href="shop.php">المتجر</a></li>
+                                <li><a href="contact.php">تواصل معنا</a></li>
                             </ul>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                         <div class="col-md-5">
                             <div class="page-header-st3-content text-start text-md-start">
                                 <ol class="breadcrumb justify-content-center justify-content-md-end" dir="ltr">
-                                    <li class="breadcrumb-item"><a class="text-dark" href="home.html">الرئيسية</a></li>
+                                    <li class="breadcrumb-item"><a class="text-dark" href="home.php">الرئيسية</a></li>
                                     <li class="breadcrumb-item active text-dark" aria-current="page">معلومات المنتج</li>
                                 </ol>
                                 <h2 class="page-header-title text-center text-md-end">معلومات المنتج</h2>
@@ -264,7 +264,7 @@
 
             <div class="container section-space">
                 <!--== Start Product Category Item ==-->
-                <a href="./product-details.html" class="product-banner-item">
+                <a href="./product-details.php" class="product-banner-item">
                     <img src="./assets/images/shop/banner/7.webp" width="1170" height="240" alt="Image-HasTech">
                 </a>
                 <!--== End Product Category Item ==-->
@@ -282,7 +282,7 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="widget-item">
                                 <div class="widget-about">
-                                    <a class="widget-logo" href="home.html">
+                                    <a class="widget-logo" href="home.php">
                                         <img src="./assets/images/logo.png" width="95" height="68" alt="Logo">
                                     </a>
                                     <p class="desc">
@@ -296,9 +296,9 @@
                                 <h4 class="widget-title">معلومات</h4>
                                 <ul class="widget-nav">
 
-                                    <li><a href="contact.html">تواصل معنا</a></li>
-                                    <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
-                                    <li><a href="shop.html">المتجر</a></li>
+                                    <li><a href="contact.php">تواصل معنا</a></li>
+                                    <li><a href="privacy-policy.php">سياسة الخصوصية</a></li>
+                                    <li><a href="shop.php">المتجر</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -340,9 +340,9 @@
                 <div id="offcanvasNav" class="offcanvas-menu-nav">
                     <ul>
 
-                        <li><a href="contact.html">تواصل معنا</a></li>
-                        <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
-                        <li><a href="shop.html">المتجر</a></li>
+                        <li><a href="contact.php">تواصل معنا</a></li>
+                        <li><a href="privacy-policy.php">سياسة الخصوصية</a></li>
+                        <li><a href="shop.php">المتجر</a></li>
                     </ul>
                 </div>
             </div>
