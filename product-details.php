@@ -1,370 +1,145 @@
-<!DOCTYPE html>
-<html class="no-js" lang="zxx">
+<?php include_once "./header.php"; ?>
+<main class="main-content">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Fakhaama store - Cosmetic & Beauty store Website</title>
-    <meta name="robots" content="noindex, follow" />
-    <meta name="description"
-        content="From the boldest to the softest and most subtle, we have something for every personality and every occasion.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="abdelaziz bardich" />
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.png">
-
-    <!-- CSS (Font, Vendor, Icon, Plugins & Style CSS files) -->
-
-    <!-- Font CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-
-    <!-- Vendor CSS (Bootstrap & Icon Font) -->
-    <link rel="stylesheet" href="./assets/css/vendor/bootstrap.min.css">
-
-    <!-- Plugins CSS (All Plugins Files) -->
-    <link rel="stylesheet" href="./assets/css/plugins/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./assets/css/plugins/font-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/plugins/fancybox.min.css">
-    <link rel="stylesheet" href="./assets/css/plugins/nice-select.css">
-
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-
-    <style>
-        .product-item .product-action .action-btn-cart {
-            border-radius: 50px;
-            height: 50px;
-            letter-spacing: .2em;
-            font-size: 13px;
-            color: #231942;
-            font-weight: 500;
-            margin: 0 20px;
-            padding: 5px 28px 5px 32px;
-            text-align: center;
-            text-transform: uppercase;
-            transition-delay: .15s;
-            display: flex;
-            align-items: center;
-        }
-
-        .nice-select.wide .list {
-            max-height: 300px;
-            overflow-y: auto;
-        }
-    </style>
-</head>
-
-<body dir="rtl">
-
-    <!--== Wrapper Start ==-->
-    <div class="wrapper">
-
-        <!--== Start Header Wrapper ==-->
-        <header class="header-area sticky-header">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-auto">
-                        <div class="header-logo">
-                            <a href="home.php">
-                                <img class="logo-main" src="./assets/images/logo.png" width="95" height="68"
-                                    alt="Logo" />
-                            </a>
-                        </div>
+<?php  $product = null;
+foreach (json_decode(file_get_contents(__DIR__.'/products.json')) as $p) {
+    if($p->id == $_GET['id']){
+        $product = $p;
+    }
+}
+?>
+    <!--== Start Page Header Area Wrapper ==-->
+    <section class="page-header-area pt-10 pb-9 bg-light" data-bg-color="#FFF3DA">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="page-header-st3-content text-start text-md-start">
+                        <ol class="breadcrumb justify-content-center justify-content-md-end" dir="ltr">
+                            <li class="breadcrumb-item"><a class="text-dark" href="index.php">الرئيسية</a></li>
+                            <li class="breadcrumb-item active text-dark" aria-current="page">معلومات المنتج</li>
+                        </ol>
+                        <h2 class="page-header-title text-center text-md-end">معلومات المنتج</h2>
                     </div>
-                    <div class="col d-lg-block">
-                        <div class="header-navigation">
-                            <ul class="main-nav justify-content-end">
-                                <li><a href="home.php">الرئيسية</a></li>
-                                <li><a href="shop.php">المتجر</a></li>
-                                <li><a href="contact.php">تواصل معنا</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="header-action justify-content-end">
+                </div>
+                <div class="col-md-7">
+                    <h5 class="showing-pagination-results mt-5 mt-md-9 text-center text-md-start">عرض المنتج
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--== End Page Header Area Wrapper ==-->
 
-
-
-                            <button class="header-menu-btn" type="button" data-bs-toggle="offcanvas"
-                                data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+    <!--== Start Product Details Area Wrapper ==-->
+    <section class="section-space">
+        <div class="container">
+            <div class="row product-details">
+                <div class="col-lg-6">
+                    <div class="product-details-thumb">
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./assets/images/products/<?= $product->photo ?>" width="570" height="693" alt="Image">
+                                </div>
+                                <?php if($product->gallery && count($product->gallery)>0){
+                                    foreach($product->gallery as $gallery){?>
+                                        <div class="carousel-item ">
+                                            <img src="./assets/images/products/<?=$gallery?>" width="570" height="693" alt="Image">
+                                        </div>
+                                    <?php }
+                                } ?>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">السابق</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">التالي</span>
                             </button>
                         </div>
+                        <span class="flag-new"><?= $product->category ?></span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="product-details-content">
+                        <div class="product-details-review">
+                            <!-- <div class="product-review-icon m-0">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div> -->
+                            <!-- <button type="button" class="product-review-show me-2">7 التقيمات</button> -->
+                        </div>
+                        <h3 class="h2 fw-bold"><?= $product->title ?></h3>
+                        <div class="product-details-action mt-3 mb-3">
+                            <span class="me-3 text-danger fw-bold display-4"><?= $product->price ?> دم</span>
+                        </div>
+                        <div class="border fw-bold bg-danger p-3 text-white mb-3">
+                            الدفع عند الإستلام
+                        </div>
+                        <div class="product-details-shipping-cost">
+                            <p class="mb-5">
+                            <?= $product->s_desc ?>
+                            </p></div>
+                        <div class="row m-0 mt-1">
+                            <div class="col-12">
+                                <a href="https://api.whatsapp.com/send?phone=212721036477&text=مرحبا%20👋👋👋،%20أريد%20شراء%20هذا%20المنتج%3A%20<?= $product->title ?>" target="_blank" class="btn d-block w-100 shadow bg-success border-success d-flex align-items-center justify-content-center p-0">اطلب عبر<i class="me-1 fs-3 fa fa-whatsapp"></i> </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </header>
-        <!--== End Header Wrapper ==-->
-
-        <main class="main-content">
-
-            <!--== Start Page Header Area Wrapper ==-->
-            <section class="page-header-area pt-10 pb-9 bg-light" data-bg-color="#FFF3DA">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="page-header-st3-content text-start text-md-start">
-                                <ol class="breadcrumb justify-content-center justify-content-md-end" dir="ltr">
-                                    <li class="breadcrumb-item"><a class="text-dark" href="home.php">الرئيسية</a></li>
-                                    <li class="breadcrumb-item active text-dark" aria-current="page">معلومات المنتج</li>
-                                </ol>
-                                <h2 class="page-header-title text-center text-md-end">معلومات المنتج</h2>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <h5 class="showing-pagination-results mt-5 mt-md-9 text-center text-md-start">عرض المنتج
-                            </h5>
-                        </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="nav product-details-nav" id="product-details-nav-tab" role="tablist">
+                        <button class="btn btn-primary ms-5" id="specification-tab" data-bs-toggle="tab"
+                            data-bs-target="#specification" type="button" role="tab"
+                            aria-controls="specification" aria-selected="true">مواصفات</button>
+                        <!-- <button class="btn btn-primary active" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="true">التقيمات</button> -->
                     </div>
-                </div>
-            </section>
-            <!--== End Page Header Area Wrapper ==-->
-
-            <!--== Start Product Details Area Wrapper ==-->
-            <section class="section-space">
-                <div class="container">
-                    <div class="row product-details">
-                        <div class="col-lg-6">
-                            <div class="product-details-thumb">
-                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="./assets/images/products/fakhama-pack.jpg" width="570" height="693" alt="Image">
-                                        </div>
-                                        <div class="carousel-item ">
-                                            <img src="./assets/images/products/lilat-khamis.jpg" width="570" height="693" alt="Image">
-                                        </div>
-                                        <div class="carousel-item ">
-                                            <img src="./assets/images/products/msk-abyad.jpg" width="570" height="693" alt="Image">
-                                        </div>
-                                        <div class="carousel-item ">
-                                            <img src="./assets/images/products/ood-model.jpg" width="570" height="693" alt="Image">
-                                        </div>
-                                        <div class="carousel-item ">
-                                            <img src="./assets/images/products/trilion.jpg" width="570" height="693" alt="Image">
-                                        </div>
-                                    </div>
-                                    <button class="carousel-control-prev" type="button"
-                                        data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">السابق</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button"
-                                        data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">التالي</span>
-                                    </button>
-                                </div>
-                                <span class="flag-new">للسيدات</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="product-details-content">
-                                <div class="product-details-review">
-                                    <!-- <div class="product-review-icon m-0">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div> -->
-                                    <!-- <button type="button" class="product-review-show me-2">7 التقيمات</button> -->
-                                </div>
-                                <h3 class="h2 fw-bold">مجموعة عطور الفخامة</h3>
-                                <div class="product-details-action mt-3 mb-3">
-                                    <!-- <span class="text-decoration-line-through small">399 دم</span> -->
-                                    <span class="me-3 text-danger fw-bold display-4">299 دم</span>
-                                </div>
-                                <div class="border fw-bold bg-danger p-3 text-white mb-3">
-                                    الدفع عند الإستلام
-                                </div>
-                                <div class="product-details-shipping-cost">
-                                    <p class="mb-5">
-                                        عطور فاخرة مناسبة للأمسيات الخاصة والمناسبات الراقية. تمنح هذه العطور اللإنطباع الأول المميز واللافت للنظر، وتستمر بإثارة الإعجاب لمن حولك طوال الليوم.                                    </p>
-                                </div>
-                                <div class="row m-0 mt-1">
-                                    <div class="col-12">
-                                        <a href="https://api.whatsapp.com/send?phone=212721036477&text=مرحبا%20👋👋👋،%20أريد%20شراء%20هذا%20المنتج%3A%20عطر%20ليلة%20الخميس%20للسيدات"
-                                            target="_blank"
-                                            class="btn d-block w-100 shadow bg-success border-success d-flex align-items-center justify-content-center p-0">اطلب
-                                            عبر<i class="me-1 fs-3 fa fa-whatsapp"></i> </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="nav product-details-nav" id="product-details-nav-tab" role="tablist">
-                                <button class="btn btn-primary ms-5" id="specification-tab" data-bs-toggle="tab"
-                                    data-bs-target="#specification" type="button" role="tab"
-                                    aria-controls="specification" aria-selected="true">مواصفات</button>
-                                <!-- <button class="btn btn-primary active" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="true">التقيمات</button> -->
-                            </div>
-                            <div class="tab-content" id="product-details-nav-tabContent">
-                                <div class="tab-pane fade show active" id="specification" role="tabpanel"
-                                    aria-labelledby="specification-tab">
-                                    <ul class="product-details-info-wrap">
-                                        <li><span class="fw-bold">الوزن:</span>
-                                            <p>250 g</p>
-                                        </li>
-                                        <li><span class="fw-bold">الأبعاد:</span>
-                                            <p>w10 x h15 x d5 cm</p>
-                                        </li>
-                                        <li><span class="fw-bold">المكونات:</span>
-                                            <ul class="pe-5 me-5">
-                                                عطر ليلة خميس, عطر عود مودل, عطر مسك أبيض, عطر تريليون
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <span class="fw-bold">معلومات اخرى:</span>
-                                            <span>
-                                                <!--  -->
-                                            </span>
-                                        </li>
+                    <div class="tab-content" id="product-details-nav-tabContent">
+                        <div class="tab-pane fade show active" id="specification" role="tabpanel"
+                            aria-labelledby="specification-tab">
+                            <ul class="product-details-info-wrap">
+                                <li><span class="fw-bold">الوزن:</span>
+                                    <p><?= $product->weight ?> g</p>
+                                </li>
+                                <li><span class="fw-bold">الأبعاد:</span>
+                                    <p><?= $product->dimensions ?></p>
+                                </li>
+                                <li><span class="fw-bold">المكونات:</span>
+                                    <ul class="pe-5 me-5">
+                                    <?= $product->content ?>
                                     </ul>
-                                    <h2 class="fw-bold text-primary mb-3">الوصف المكامل:</h2>
-                                    <p>
-                                        عطور فاخرة مناسبة للأمسيات الخاصة والمناسبات الراقية. تمنح هذه العطور اللإنطباع الأول المميز واللافت للنظر، وتستمر بإثارة الإعجاب لمن حولك طوال الليوم.
-                                    </p>
-                                    <h4>
-                                        عطر ليلة خميس:
-                                    </h4>
-                                    <p>
-                                        هذا العطر هو خيار مثالي للأمسيات الخاصة التي ترغب في أن تترك انطباعًا مميزًا. يتميز بمزيج رائع من الروائح الفاكهية والزهور الناعمة، مما يجعله يناسب الليالي الدافئة والممتعة. سوف يترك هذا العطر لمسة من الأناقة والجمال والجاذبية على بشرتك، مما يجعلك تشعر بالثقة والتألق.
-                                    </p>
-                                    <h4>
-                                        عطر عود مودل:
-                                    </h4>
-                                    <p>
-                                        يتميز هذا العطر برائحة عود غنية وفاخرة، مع تداخلات من الزهور والفواكه الحلوة والتوابل الدافئة، مما يجعله مثاليًا للمناسبات الراقية والأمسيات الفاخرة. سيعطي هذا العطر لمسة من الأناقة والتميز والتألق، مما يجعلك تشعر بالثقة والجاذبية.
-                                    </p>
-                                    <h4>
-                                        عطر مسك أبيض:
-                                    </h4>
-                                    <p>
-                                        هذا العطر مثالي للمرأة التي تريد الأناقة والرقي والجاذبية. يتميز بنفحات من المسك الناعم والزهور البيضاء الرقيقة، مما يجعله عطرًا جذابًا وجذّابًا للنساء. سوف يعطي هذا العطر لمسة من الأنوثة والجمال والجاذبية لأيام طويلة.
-                                    </p>
-                                    <h4>
-                                        عطر تريليون:
-                                    </h4>
-                                    <p>
-                                        يتميز هذا العطر برائحة فواحة ومثيرة، مع تداخلات من الفواكه الناعمة والأزهار الرقيقة والتوابل الجذابة. يجعل هذا العطر مناسبًا للأمسيات الراقية والمناسبات الخاصة، حيث يتميز بمزيج من الأناقة والجمال والجاذبية. سيعطي هذا العطر لمسة من الرفاهية والتميز والأناقة، مما يجعله خيارًا
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="container section-space">
-                <!--== Start Product Category Item ==-->
-                <a href="./product-details.php" class="product-banner-item">
-                    <img src="./assets/images/shop/banner/7.webp" width="1170" height="240" alt="Image-HasTech">
-                </a>
-                <!--== End Product Category Item ==-->
-            </div>
-
-        </main>
-
-
-        <!--== Start Footer Area Wrapper ==-->
-        <footer class="footer-area">
-            <!--== Start Footer Main ==-->
-            <div class="footer-main">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="widget-item">
-                                <div class="widget-about">
-                                    <a class="widget-logo" href="home.php">
-                                        <img src="./assets/images/logo.png" width="95" height="68" alt="Logo">
-                                    </a>
-                                    <p class="desc">
-                                        من الأجرأ إلى الأكثر نعومة ودقة ، لدينا ما يناسب كل شخصية وكل مناسبة.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-5 mt-md-0 mt-9">
-                            <div class="widget-item">
-                                <h4 class="widget-title">معلومات</h4>
-                                <ul class="widget-nav">
-
-                                    <li><a href="contact.php">تواصل معنا</a></li>
-                                    <li><a href="privacy-policy.php">سياسة الخصوصية</a></li>
-                                    <li><a href="shop.php">المتجر</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 mt-lg-0 mt-6">
-                            <div class="widget-item">
-                                <h4 class="widget-title">علومات التواصل الاجتماعي</h4>
-                                <div class="widget-social">
-                                    <a href="https://facebook.com/people/Fakhaama-store/100089897808895/"
-                                        target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
-                                </div>
-                            </div>
+                                </li>
+                                <li>
+                                    <span class="fw-bold">معلومات اخرى:</span>
+                                    <span>
+                                        <!--  -->
+                                    </span>
+                                </li>
+                            </ul>
+                            <h2 class="fw-bold text-primary mb-3">الوصف المكامل:</h2>
+                            <?= $product->desc ?>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--== End Footer Main ==-->
+        </div>
+    </section>
 
-            <!--== Start Footer Bottom ==-->
-            <div class="footer-bottom" dir="ltr">
-                <div class="container pt-0 pb-0">
-                    <div class="footer-bottom-content">
-                        <p class="copyright">2023 © Fakhaama store. Made with <i class="fa fa-heart"></i> by <a
-                                target="_blank" href="https://abdelazizbardich.com">Abdelaziz Bardich</a></p>
-                    </div>
-                </div>
-            </div>
-            <!--== End Footer Bottom ==-->
-        </footer>
-        <!--== End Footer Area Wrapper ==-->
-        <!--== Start Aside Menu ==-->
-        <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu"
-            aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header">
-                <h1 class="d-none" id="offcanvasExampleLabel">القائمة الجانبية</h1>
-                <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">القائمة <i
-                        class="fa fa-chevron-left"></i></button>
-            </div>
-            <div class="offcanvas-body">
-                <div id="offcanvasNav" class="offcanvas-menu-nav">
-                    <ul>
-
-                        <li><a href="contact.php">تواصل معنا</a></li>
-                        <li><a href="privacy-policy.php">سياسة الخصوصية</a></li>
-                        <li><a href="shop.php">المتجر</a></li>
-                    </ul>
-                </div>
-            </div>
-        </aside>
-        <!--== End Aside Menu ==-->
-
+    <div class="container section-space">
+        <!--== Start Product Category Item ==-->
+        <a href="./product-details.php" class="product-banner-item">
+            <img src="./assets/images/shop/banner/7.webp" width="1170" height="240" alt="Image-HasTech">
+        </a>
+        <!--== End Product Category Item ==-->
     </div>
-    <!--== Wrapper End ==-->
 
-    <!-- JS Vendor, Plugins & Activation Script Files -->
-
-    <!-- Vendors JS -->
-    <script src="./assets/js/vendor/modernizr-3.11.7.min.js"></script>
-    <script src="./assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="./assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
-    <script src="./assets/js/vendor/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugins JS -->
-    <script src="./assets/js/plugins/swiper-bundle.min.js"></script>
-    <script src="./assets/js/plugins/fancybox.min.js"></script>
-    <script src="./assets/js/plugins/jquery.nice-select.min.js"></script>
-
-</body>
-
-</html>
+</main>
+<?php include_once "./footer.php"; ?>
