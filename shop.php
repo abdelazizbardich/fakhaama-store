@@ -71,7 +71,7 @@
     </section>
     <section class="section-space pt-0">
         <div class="container">
-            <a href="shop.php" class="product-banner-item">
+            <a class="product-banner-item">
                 <img src="assets/images/shop/banner/7.webp" width="1170" height="240" alt="Image-HasTech">
             </a>
         </div>
