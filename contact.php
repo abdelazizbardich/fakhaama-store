@@ -54,7 +54,6 @@
                         </form>
                     </div>
                     <!--== End Contact Form ==-->
-
                     <!--== Message Notification ==-->
                     <div class="form-message"></div>
                 </div>

@@ -31,7 +31,15 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VZSDJM2EW5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-VZSDJM2EW5');
+</script>
     <style>
         .product-item .product-action .action-btn-cart {
             border-radius: 50px;
